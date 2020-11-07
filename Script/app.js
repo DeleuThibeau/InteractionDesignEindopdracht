@@ -1,11 +1,11 @@
-//#region ===== 2 Aan de hand van een longitude en latitude gaan we de yahoo wheater API ophalen.  //
+//#region ===== We gaan met twee API calls werken. De eerste haalt ALLE pokemons op. De tweede haalt de details op per pokemon  //
 
 let loading = true
 let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=3"
 let pokemonObjectLijst = []
 
 
-const getName_API = async (nextcall) => {
+const getAllPokemon_API = async (nextcall) => {
 
 	// Eerst bouwen we onze url op
 	// Met de fetch API proberen we de data op te halen.		
@@ -18,20 +18,20 @@ const getName_API = async (nextcall) => {
     //console.log(resultLijst)
     //console.log("the next url is " + next)
 
-    resultLijst.forEach(element => getPokemon_API(element.url))
+    resultLijst.forEach(element => getDetailsPokemon_API(element.url))
 
+    console.log("De lijst met pokemons is: ")
     console.log(pokemonObjectLijst)
     nextcall = next
     //console.log("the next url is " + nextcall)
-    
+
     //setTimeout(50000)
     //getName_API(nextcall);
      
 };
 
-const getPokemon_API = async (url) => {
+const getDetailsPokemon_API = async (url) => {
 
-	// Eerst bouwen we onze url op
 	// Met de fetch API proberen we de data op te halen.		
 	const data = await fetch(url)
 			.then((r) =>r.json())
@@ -61,7 +61,7 @@ const getPokemon_API = async (url) => {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    getName_API(nextcall);
+    getAllPokemon_API(nextcall);
     
 });
 
