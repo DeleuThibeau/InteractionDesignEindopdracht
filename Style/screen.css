@@ -435,7 +435,7 @@ input::placeholder {
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
-    margin: 0 -12px;
+    margin: 0 12px;
 }
 
 .o-layout--gutter > .o-layout__item {

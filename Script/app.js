@@ -1,57 +1,65 @@
 //#region ===== We gaan met twee API calls werken. De eerste haalt ALLE pokemons op. De tweede haalt de details op per pokemon  //
 
 let loading = true
-let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=3"
-let pokemonObjectLijst = []
+let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=10"
+const pokemonList = document.querySelector('.js-pokemonlist');
 
 
-const getAllPokemon_API = async (nextcall) => {
+
+async function getAllPokemon_API(url) {
 
 	// Eerst bouwen we onze url op
 	// Met de fetch API proberen we de data op te halen.		
-    const data = await fetch(nextcall) //next call variabele
+    const data = await fetch(url) //next call variabele
             .then(r => r.json())
             .catch((err) => console.error('an error occurred', err))
      
     let resultLijst = data.results
     let next = data.next
-    //console.log(resultLijst)
-    //console.log("the next url is " + next)
-
-    resultLijst.forEach(element => getDetailsPokemon_API(element.url))
-
-    console.log("De lijst met pokemons is: ")
-    console.log(pokemonObjectLijst)
+    //console.log("the huidige url in de API function is: \n" + nextcall)
     nextcall = next
-    //console.log("the next url is " + nextcall)
+    console.log(resultLijst)
+    //console.log("the next url in de API function is: \n" + nextcall)
 
-    //setTimeout(50000)
-    //getName_API(nextcall);
-     
+    resultLijst.forEach(element =>setTimeout(() => { getDetailsPokemon_API(element.url) }, 0))
+ 
 };
+
+
+
 
 const getDetailsPokemon_API = async (url) => {
 
-	// Met de fetch API proberen we de data op te halen.		
-	const data = await fetch(url)
-			.then((r) =>r.json())
-            .catch((err) => console.error('an error occurred', err))
-
-        const name = data.name
-        const id = data.id
-        const stats = data.stats
-        const sprite = data.sprites.front_default
-        const type = data.types
-
-        let object = {"pokemon":[{
-            "id": id,
-            "name":name,
-            "stats":stats,
-            "sprite": sprite,
-            "type":type
-        }]}
+    await setTimeout(() => { 
+     fetch(url)
+        .then(result => {
+        let data = result.json().then(object => { 
         
-        pokemonObjectLijst.push(object)
+        pokemonList.innerHTML += `
+        <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center stats">
+            <div>
+                <img src="${ object.sprites.front_default }" alt="${ object.name }">
+                <p class="o-layout o-layout--justify-center">${ object.name }</p>
+            </div>
+        
+            <div class="o-layout--gutter">
+                <p>HP: ${ object.stats[0].base_stat }</p>
+                <p>Attack: ${ object.stats[1].base_stat }</p>
+                <p>Defense: ${ object.stats[2].base_stat }</p>
+                </div>
+                
+            <div class="o-layout--gutter">
+                <p>Speciale Attack: ${ object.stats[3].base_stat }</p>
+                <p>Special Defense: ${ object.stats[4].base_stat }</p>
+                <p>Speed: ${ object.stats[5].base_stat }</p>
+            </div>
+                
+    `;});
+        console.log(data)
+
+    
+    });
+     }, 0)
 
 
 };
@@ -59,11 +67,30 @@ const getDetailsPokemon_API = async (url) => {
 //#endregion
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
 
-    getAllPokemon_API(nextcall);
     
 });
+
+
+const animateIn = document.querySelectorAll(".js-animate-in-reset");
+
+observerR = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+                
+                //console.log("Visible", entry)
+                //console.log("De url die wordt gebruikt bij de IntersectionObserver is : \n" + nextcall)
+                getAllPokemon_API(nextcall);
+
+        } 
+    });
+});
+
+animateIn.forEach(x => {
+    observerR.observe(x)
+})
 
 
 
@@ -79,3 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //     -> Pokemon Detail API Call
 //         -> URL krijg je mee uit loop van hierboven -> Call Uitvoeren
 //             -> Call van pokemon klaar => HTML Objectje (je detail html om een pokemon op je home page te zetten opmaken) en pushen in hoofdDIV
+
+
+
+
+
