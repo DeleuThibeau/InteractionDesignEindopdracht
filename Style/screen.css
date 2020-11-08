@@ -289,6 +289,9 @@ input::placeholder {
     position: relative;
     padding: 24px 24px 0;
 }
+.o-row-powerlevel{
+    margin: 0 0  80px 0;
+}
 
 .o-row--login {
     min-height: 100vh;
@@ -1771,3 +1774,4 @@ No media query since this is the default in mobile first design
 u.relative{
     position:relative;
 }
+

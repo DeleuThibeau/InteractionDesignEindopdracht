@@ -5,7 +5,6 @@ let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=10"
 const pokemonList = document.querySelector('.js-pokemonlist');
 
 
-
 async function getAllPokemon_API(url) {
 
 	// Eerst bouwen we onze url op
@@ -21,12 +20,9 @@ async function getAllPokemon_API(url) {
     console.log(resultLijst)
     //console.log("the next url in de API function is: \n" + nextcall)
 
-    resultLijst.forEach(element =>setTimeout(() => { getDetailsPokemon_API(element.url) }, 0))
+    resultLijst.forEach(element =>setTimeout(() => { getDetailsPokemon_API(element.url) }, 100))
  
 };
-
-
-
 
 const getDetailsPokemon_API = async (url) => {
 
@@ -35,8 +31,10 @@ const getDetailsPokemon_API = async (url) => {
         .then(result => {
         let data = result.json().then(object => { 
         
+        let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
+
         pokemonList.innerHTML += `
-        <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center stats">
+        <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
             <div>
                 <img src="${ object.sprites.front_default }" alt="${ object.name }">
                 <p class="o-layout o-layout--justify-center">${ object.name }</p>
@@ -53,13 +51,18 @@ const getDetailsPokemon_API = async (url) => {
                 <p>Special Defense: ${ object.stats[4].base_stat }</p>
                 <p>Speed: ${ object.stats[5].base_stat }</p>
             </div>
+        </div>
+
+        <div class=" o-row-powerlevel o-layout o-layout--justify-center o-layout--align-center"> 
+            <p>Power level is ${ powerlevel.toFixed(2) }% </p>
+        </div>
                 
     `;});
         console.log(data)
 
     
     });
-     }, 0)
+     }, 100)
 
 
 };
