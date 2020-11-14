@@ -5,26 +5,54 @@
         <title>Pokeintel</title>
         <link rel="stylesheet" href="Style/normalize.css">
 		<link rel="stylesheet" href="Style/screen.css">
-		<script defer src="./script/app.js"></script>
+        <script defer src="./script/app.js"></script>
     </head>
+
     <body>
         <div class='o-container'>
-            
             <section class="o-row o-row--lg">
                 <div class=" o-layout o-layout__item o-layout--justify-center u-relative">
                     <div>
                         <p class=" o-layout o-layout__item o-layout--justify-center">Pokeintel</p>
                         <p>The easy way to find pokemon stats!</p>
                     </div>
-                    <div class="o-layout o-layout__item o-layout--justify-end u-absolute">
-                        <p>filter hier</p>
+                    <div class="c-navigation o-layout o-layout__item o-layout--justify-start u-absolute">
+                        <svg style="font-size:30px;cursor:pointer" onclick="openNav()" xmlns="http://www.w3.org/2000/svg " width="24" height="16" viewBox="0 0 40 29">
+                            <g id="Group_199" data-name="Group 199" transform="translate(-19 -25)">
+                                <rect id="Rectangle_14" data-name="Rectangle 14" width="40" height="7" rx="3.5" transform="translate(19 47)" fill="#fff"/>
+                                <rect id="Rectangle_15" data-name="Rectangle 15" width="40" height="7" rx="3.5" transform="translate(19 36)" fill="#fff"/>
+                                <rect id="Rectangle_16" data-name="Rectangle 16" width="40" height="7" rx="3.5" transform="translate(19 25)" fill="#fff"/>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </section>
 
-            <section class="js-pokemonlist">
-            </section>
-            <div class="watcher js-animate-in-reset"></div>
+            <div id="myNav" class="overlay">
+                <div class="closebtn" onclick="closeNav()">&times;</div>
+                <div class="overlay-content">
+                  <a href="#">Water</a>
+                  <a href="#">Fire</a>
+                  <a href="#">Grass</a>
+                  <a href="#">Electric</a>
+                  <a href="#">Ground</a>
+                  <a href="#">Rock</a>
+                  <a href="#">Steel</a>
+                  <a href="#">Dragon</a>
+                  <a href="#">Ice</a>
+                  <a href="#">Psychic</a>
+                  <a href="#">Poison</a>
+                  <a href="#">Bug</a>
+                  <a href="#">Fairy</a>
+                  <a href="#">Ghost</a>
+                  <a href="#">Fighting</a>
+                  <a href="#">Normal</a>
+                </div>
+            </div>
+
+        <section class="js-pokemonlist">
+        </section>
+        <div class="watcher js-animate-in-reset"></div>
 
         </div>
     </body>

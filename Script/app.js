@@ -1,7 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
+});
+
+
 //#region ===== We gaan met twee API calls werken. De eerste haalt ALLE pokemons op. De tweede haalt de details op per pokemon  //
 
 let loading = true
-let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=10"
+let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=3"
 const pokemonList = document.querySelector('.js-pokemonlist');
 
 
@@ -34,27 +38,62 @@ const getDetailsPokemon_API = async (url) => {
         let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
 
         pokemonList.innerHTML += `
-        <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
-            <div>
-                <img src="${ object.sprites.front_default }" alt="${ object.name }">
-                <p class="o-layout o-layout--justify-center">${ object.name }</p>
-            </div>
-        
-            <div class="o-layout--gutter">
-                <p>HP: ${ object.stats[0].base_stat }</p>
-                <p>Attack: ${ object.stats[1].base_stat }</p>
-                <p>Defense: ${ object.stats[2].base_stat }</p>
+        <div class="c-pokemon">
+            <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
+                <div>
+                    <img src="${ object.sprites.front_default }" alt="${ object.name }">
+                    <p class="o-layout o-layout--justify-center">${ object.name }</p>
                 </div>
                 
-            <div class="o-layout--gutter">
-                <p>Speciale Attack: ${ object.stats[3].base_stat }</p>
-                <p>Special Defense: ${ object.stats[4].base_stat }</p>
-                <p>Speed: ${ object.stats[5].base_stat }</p>
+                <div class="o-layout--gutter">
+                    <p>
+                        <div>HP: ${object.stats[0].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[0].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div>Attack: ${object.stats[1].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[1].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div>Defense: ${object.stats[2].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[2].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                </div>
+                    
+                <div class="o-layout--gutter">
+                    <p>
+                        <div>Speciale Attack: ${object.stats[3].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div>Speciale Defense: ${object.stats[4].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div>Speed: ${object.stats[5].base_stat }</div>
+                        <div class="progress_bar_color bar_radius">
+                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
+                        </div>
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class=" o-row-powerlevel o-layout o-layout--justify-center o-layout--align-center"> 
-            <p>Power level is ${ powerlevel.toFixed(2) }% </p>
+            <div class=" o-row-powerlevel o-layout o-layout--justify-center o-layout--align-center"> 
+                <p>Power level is ${ powerlevel.toFixed(2) }%</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${powerlevel.toFixed(2)}%"></div>
+                </div>
+            </div>
         </div>
                 
     `;});
@@ -70,11 +109,13 @@ const getDetailsPokemon_API = async (url) => {
 //#endregion
 
 
+function openNav() {
+    document.getElementById("myNav").style.width = "30%";
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-
-    
-});
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    }   
 
 
 const animateIn = document.querySelectorAll(".js-animate-in-reset");
