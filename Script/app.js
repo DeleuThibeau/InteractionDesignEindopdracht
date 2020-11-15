@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    filter();
+    filter_type();
+    filter_name();
 });
 
 //#region ===== API & pokemon HTML //
@@ -38,74 +39,71 @@ const getDetailsPokemon_API = async (url) => {
         let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
         
         pokemonList.innerHTML += `
-        <div class="c-pokemon">
-            <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
-                <div>
-                    <img src="${object.sprites.front_default }" alt="${ object.name }">
-                    <p class="o-layout o-layout--justify-center">${ object.name }</p>
-                </div>
-                
-                <div class="o-layout--gutter">
-                    <p>
-                        <div>HP: ${object.stats[0].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[0].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
-                    <p>
-                        <div>Attack: ${object.stats[1].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[1].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
-                    <p>
-                        <div>Defense: ${object.stats[2].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[2].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
-                </div>
+            <div class="c-pokemon">
+                <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
+                    <div>
+                        <img src="${object.sprites.front_default }" alt="${ object.name }">
+                        <p class="o-layout o-layout--justify-center">${ object.name }</p>
+                    </div>
                     
-                <div class="o-layout--gutter">
-                    <p>
-                        <div>Speciale Attack: ${object.stats[3].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
-                    <p>
-                        <div>Speciale Defense: ${object.stats[4].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
-                    <p>
-                        <div>Speed: ${object.stats[5].base_stat }</div>
-                        <div class="progress_bar_color bar_radius">
-                            <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
-                        </div>
-                    </p>
+                    <div class="o-layout--gutter">
+                        <p>
+                            <div>HP: ${object.stats[0].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[0].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                        <p>
+                            <div>Attack: ${object.stats[1].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[1].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                        <p>
+                            <div>Defense: ${object.stats[2].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[2].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                    </div>
+                        
+                    <div class="o-layout--gutter">
+                        <p>
+                            <div>Speciale Attack: ${object.stats[3].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                        <p>
+                            <div>Speciale Defense: ${object.stats[4].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                        <p>
+                            <div>Speed: ${object.stats[5].base_stat }</div>
+                            <div class="progress_bar_color bar_radius">
+                                <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
+                            </div>
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class=" o-row-powerlevel o-layout o-layout--justify-center o-layout--align-center"> 
-                <p>Power level is ${ powerlevel.toFixed(2) }%</p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${powerlevel.toFixed(2)}%"></div>
+                <div class=" o-row-powerlevel o-layout o-layout--justify-center o-layout--align-center"> 
+                    <p>Power level is ${ powerlevel.toFixed(2) }%</p>
+                    <div class="progress_bar_color bar_radius">
+                        <div class="progress_bar_percentage_color bar_radius" style="width:calc(${powerlevel.toFixed(2)}%"></div>
+                    </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
 
         if(object.id == 893){
             var element = document.getElementById("id_loader");
             element.classList.add("o-hide")
-            }
-        });
-        //console.log(data)
+        }
     });
-}, 500)
-
-};
+});
+}, 500)};
 
 //#endregion
 
@@ -134,11 +132,11 @@ animateIn.forEach(x => {
 
 document.getElementById("hamburger-icon").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "20%";
-})
+});
 
 document.getElementById("id_closebtn").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "0%";
-})
+});
 
 //#endregion
 
@@ -254,12 +252,30 @@ const showType = function(element){
     })
 };
 
-const filter = function(){
+const showpokemon = function(name){
+    console.log(name)
+};
+
+const filter_type = function(){
     const div = document.querySelector(".overlay-content");
     var list = Array.prototype.slice.call(div.children)
 
     list.forEach(showType);
-}
+};
+
+const filter_name = function(){
+    document.getElementById("c-button-submit").addEventListener("click",function(){
+        var value = document.getElementById("c-input-field").value
+        if(isNaN(value))
+        {
+            showpokemon(value);
+        }
+        else
+        {
+            console.log("pokemon names dont have numbers in them")
+        }        
+    })
+};
 
 
 //#endregion

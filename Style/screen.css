@@ -1936,3 +1936,18 @@ u.relative{
   .o-hide{
       opacity: 0;
   }
+
+  .pokemon_input{
+      margin:80px auto -60px auto;
+
+  }
+  .pokemon_input_send{
+    margin:80px auto auto auto;
+    width: 50px;
+    height: 20px;
+  }
+
+  #hamburger-icon{
+      width: 200px;
+      height: 200px;
+  }
