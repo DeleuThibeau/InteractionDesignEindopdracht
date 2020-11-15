@@ -1805,7 +1805,7 @@ u.relative{
 }
 
 .c-navigation{
-    margin-left:24px;
+    margin-left:48px;
     position: fixed;
 }
 
@@ -1840,10 +1840,76 @@ u.relative{
     transition: 0.3s;
   }
   
-  .overlay a:hover, .overlay a:focus {
+  .overlay a:hover{
     color: #f1f1f1;
     background-color: #0D2E68;
   }
+
+  .overlay #water:hover{
+    background-color: rgba(0,0,255, 0.7);
+}
+
+  .overlay #fire:hover{
+      background-color: rgba(255,0,0, 0.7);
+  }
+
+  .overlay #grass:hover{
+    background-color: green;
+}
+
+.overlay #electric:hover{
+    background-color: yellow;
+    color:black;
+}
+
+.overlay #ground:hover{
+    background-color: #b5651D;
+}
+
+.overlay #rock:hover{
+    background-color: #654321 ;
+    color:white;
+}
+
+.overlay #steel:hover{
+    background-color: gray;
+}
+
+.overlay #ice:hover{
+    background-color: cyan;
+    color:black;
+}
+
+.overlay #psychic:hover{
+    background-color: hotpink;
+    color:black;
+}
+
+.overlay #poison:hover{
+    background-color: purple;
+}
+
+.overlay #bug:hover{
+    background-color: #006400;
+}
+
+.overlay #fairy:hover{
+    background-color: #FFB6C1;
+    color:black;
+}
+
+.overlay #ghost:hover{
+    background-color: #301934;
+}
+
+.overlay #fighting:hover{
+    background-color: brown;
+}
+
+.overlay #normal:hover{
+    background-color: white;
+    color:black;
+}
   
   .overlay .closebtn {
     position: absolute;

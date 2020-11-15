@@ -110,13 +110,14 @@ const getDetailsPokemon_API = async (url) => {
 
 //#region ===== Sidebar  //
 
-function openNav() {
-    document.getElementById("myNav").style.width = "30%";
-    }
+document.getElementById("hamburger-icon").addEventListener("click",function(){
+    document.getElementById("myNav").style.width = "20%";
+})
 
-function closeNav() {
+document.getElementById("id_closebtn").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "0%";
-    }   
+})
+
 
 //#endregion
 
@@ -152,7 +153,6 @@ const showType = function(element){
 
 const filter = function(){
     const div = document.querySelector(".overlay-content");
-    //console.log(div.children[0].id);
     var list = Array.prototype.slice.call(div.children)
 
     list.forEach(showType);

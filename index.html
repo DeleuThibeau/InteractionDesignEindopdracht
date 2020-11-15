@@ -17,7 +17,7 @@
                         <p>The easy way to find pokemon stats!</p>
                     </div>
                     <div class="c-navigation o-layout o-layout__item o-layout--justify-start u-absolute">
-                        <svg style="font-size:30px;cursor:pointer" onclick="openNav()" xmlns="http://www.w3.org/2000/svg " width="24" height="16" viewBox="0 0 40 29">
+                        <svg style="font-size:30px;cursor:pointer" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg " width="24" height="16" viewBox="0 0 40 29">
                             <g id="Group_199" data-name="Group 199" transform="translate(-19 -25)">
                                 <rect id="Rectangle_14" data-name="Rectangle 14" width="40" height="7" rx="3.5" transform="translate(19 47)" fill="#fff"/>
                                 <rect id="Rectangle_15" data-name="Rectangle 15" width="40" height="7" rx="3.5" transform="translate(19 36)" fill="#fff"/>
@@ -28,31 +28,32 @@
                 </div>
             </section>
 
+            <section class="js-pokemonlist">
+            </section>
+
             <div id="myNav" class="overlay">
-                <div class="closebtn" onclick="closeNav()">&times;</div>
+                <div class="closebtn" id="id_closebtn">&times;</div>
                 <div class="overlay-content">
-                  <a id="water">Water</a>
-                  <a id="fire">Fire</a>
-                  <a id="grass">Grass</a>
-                  <a id="electric">Electric</a>
-                  <a id="ground">Ground</a>
-                  <a id="rock">Rock</a>
-                  <a id="steel">Steel</a>
-                  <a id="dragon">Dragon</a>
-                  <a id="ice">Ice</a>
-                  <a id="psychic">Psychic</a>
-                  <a id="poison">Poison</a>
-                  <a id="bug">Bug</a>
-                  <a id="fairy">Fairy</a>
-                  <a id="ghost">Ghost</a>
-                  <a id="fighting">Fighting</a>
-                  <a id="normal">Normal</a>
+                <a id="water">Water</a>
+                <a id="fire">Fire</a>
+                <a id="grass">Grass</a>
+                <a id="electric">Electric</a>
+                <a id="ground">Ground</a>
+                <a id="rock">Rock</a>
+                <a id="steel">Steel</a>
+                <a id="dragon">Dragon</a>
+                <a id="ice">Ice</a>
+                <a id="psychic">Psychic</a>
+                <a id="poison">Poison</a>
+                <a id="bug">Bug</a>
+                <a id="fairy">Fairy</a>
+                <a id="ghost">Ghost</a>
+                <a id="fighting">Fighting</a>
+                <a id="normal">Normal</a>
                 </div>
             </div>
 
-        <section class="js-pokemonlist">
-        </section>
-        <div class="watcher js-animate-in-reset"></div>
+            <div class="watcher js-animate-in-reset"></div>
 
         </div>
     </body>
