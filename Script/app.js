@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=3"
 const pokemonList = document.querySelector('.js-pokemonlist');
 
-
 async function getAllPokemon_API(url) {
-	// Eerst bouwen we onze url op
+    // Eerst bouwen we onze url op
+    url = nextcall;
 	// Met de fetch API proberen we de data op te halen.		
     const data = await fetch(url) //next call variabele
             .then(r => r.json())
@@ -108,20 +108,8 @@ const getDetailsPokemon_API = async (url) => {
 
 //#endregion
 
-//#region ===== Sidebar  //
-
-document.getElementById("hamburger-icon").addEventListener("click",function(){
-    document.getElementById("myNav").style.width = "20%";
-})
-
-document.getElementById("id_closebtn").addEventListener("click",function(){
-    document.getElementById("myNav").style.width = "0%";
-})
-
-
-//#endregion
-
 //#region ===== Autoscroll  //
+
 const animateIn = document.querySelectorAll(".js-animate-in-reset");
 
 observerR = new IntersectionObserver((entries) => {
@@ -138,6 +126,18 @@ observerR = new IntersectionObserver((entries) => {
 
 animateIn.forEach(x => {
     observerR.observe(x)
+})
+
+//#endregion
+
+//#region ===== Sidebar  //
+
+document.getElementById("hamburger-icon").addEventListener("click",function(){
+    document.getElementById("myNav").style.width = "20%";
+})
+
+document.getElementById("id_closebtn").addEventListener("click",function(){
+    document.getElementById("myNav").style.width = "0%";
 })
 
 //#endregion
