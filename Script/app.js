@@ -36,7 +36,7 @@ const getDetailsPokemon_API = async (url) => {
         //console.log(object.types[0].type.name)
         //console.log(object.types[1].type.name)
         let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
-
+        
         pokemonList.innerHTML += `
         <div class="c-pokemon">
             <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
@@ -94,22 +94,22 @@ const getDetailsPokemon_API = async (url) => {
                     <div class="progress_bar_percentage_color bar_radius" style="width:calc(${powerlevel.toFixed(2)}%"></div>
                 </div>
             </div>
-        </div>
-                
-    `;});
-    //console.log(data)
+        </div>`;
 
-    
+        if(object.id == 893){
+            var element = document.getElementById("id_loader");
+            element.classList.add("o-hide")
+            }
+        });
+        //console.log(data)
     });
-     }, 500)
-
+}, 500)
 
 };
 
 //#endregion
 
 //#region ===== Autoscroll  //
-let loading = true
 const animateIn = document.querySelectorAll(".js-animate-in-reset");
 
 observerR = new IntersectionObserver((entries) => {
