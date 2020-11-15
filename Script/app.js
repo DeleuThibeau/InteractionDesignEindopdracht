@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    filter();
 });
 
+//#region ===== API & pokemon HTML //
 
-//#region ===== We gaan met twee API calls werken. De eerste haalt ALLE pokemons op. De tweede haalt de details op per pokemon  //
-
-let loading = true
 let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=3"
 const pokemonList = document.querySelector('.js-pokemonlist');
 
 
 async function getAllPokemon_API(url) {
-
 	// Eerst bouwen we onze url op
 	// Met de fetch API proberen we de data op te halen.		
     const data = await fetch(url) //next call variabele
@@ -34,14 +32,16 @@ const getDetailsPokemon_API = async (url) => {
      fetch(url)
         .then(result => {
         let data = result.json().then(object => { 
-        
+        //console.log(object.types)
+        //console.log(object.types[0].type.name)
+        //console.log(object.types[1].type.name)
         let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
 
         pokemonList.innerHTML += `
         <div class="c-pokemon">
             <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
                 <div>
-                    <img src="${ object.sprites.front_default }" alt="${ object.name }">
+                    <img src="${object.sprites.front_default }" alt="${ object.name }">
                     <p class="o-layout o-layout--justify-center">${ object.name }</p>
                 </div>
                 
@@ -97,7 +97,7 @@ const getDetailsPokemon_API = async (url) => {
         </div>
                 
     `;});
-        console.log(data)
+    //console.log(data)
 
     
     });
@@ -108,6 +108,7 @@ const getDetailsPokemon_API = async (url) => {
 
 //#endregion
 
+//#region ===== Sidebar  //
 
 function openNav() {
     document.getElementById("myNav").style.width = "30%";
@@ -117,7 +118,9 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
     }   
 
+//#endregion
 
+//#region ===== Autoscroll  //
 const animateIn = document.querySelectorAll(".js-animate-in-reset");
 
 observerR = new IntersectionObserver((entries) => {
@@ -135,6 +138,46 @@ observerR = new IntersectionObserver((entries) => {
 animateIn.forEach(x => {
     observerR.observe(x)
 })
+
+//#endregion
+
+//#region ===== Filter  //
+
+
+const showType = function(element){
+    document.getElementById(`${element.id}`).addEventListener("click",function(){
+        console.log(`Er werd op ${element.id} geklikt`)
+    })
+};
+
+const filter = function(){
+    const div = document.querySelector(".overlay-content");
+    //console.log(div.children[0].id);
+    var list = Array.prototype.slice.call(div.children)
+
+    list.forEach(showType);
+}
+
+
+//#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

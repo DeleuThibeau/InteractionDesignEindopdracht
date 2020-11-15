@@ -1806,6 +1806,7 @@ u.relative{
 
 .c-navigation{
     margin-left:24px;
+    position: fixed;
 }
 
 
