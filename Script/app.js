@@ -252,9 +252,6 @@ const showType = function(element){
     })
 };
 
-const showpokemon = function(name){
-    console.log(name)
-};
 
 const filter_type = function(){
     const div = document.querySelector(".overlay-content");
@@ -263,19 +260,6 @@ const filter_type = function(){
     list.forEach(showType);
 };
 
-const filter_name = function(){
-    document.getElementById("c-button-submit").addEventListener("click",function(){
-        var value = document.getElementById("c-input-field").value
-        if(isNaN(value))
-        {
-            showpokemon(value);
-        }
-        else
-        {
-            console.log("pokemon names dont have numbers in them")
-        }        
-    })
-};
 
 
 //#endregion
