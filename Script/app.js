@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     filter_type();
-    filter_name();
 });
 
 //#region ===== API & pokemon HTML //
