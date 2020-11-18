@@ -277,9 +277,6 @@ select {
     width: 100%;
 }
 
-input::placeholder {
-    color: white;
-}
 
 /*------------------------------------*\
 #OBJECTS
@@ -765,7 +762,7 @@ input::placeholder {
 }
 
 .c-input:hover {
-    border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
+    border-color:  var(--global-input-hover-borderColor));
 }
 
 .c-input:focus,
@@ -809,6 +806,8 @@ more padding on the right to avoid overlap
     color: var(--label-color, var(--global-label-color));
 }
 
+
+
 .c-label--option {
     padding-bottom: 0;
 }
@@ -824,7 +823,6 @@ more padding on the right to avoid overlap
 }
 
 .c-label--floating {
-    position: absolute;
     top: calc(var(--global-baseline) * 1.5);
     left: var(--global-whitespace-sm);
     padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
@@ -2023,7 +2021,7 @@ u.relative{
     width:100%
 }
 
-.c-email-input{
+.o-layout-email-input{
     width:480px;
     height: 36px;;
     margin-bottom: 40px;
@@ -2033,15 +2031,23 @@ u.relative{
     background-color: transparent;
     text-align: center; 
     font-weight: bold;
+    outline: none;
 }
 
-::placeholder{
+input{
     color:white;
 }
-  
+
+input::placeholder{
+    color:white;
+    opacity: 75%;
+
+}
 
 
-.c-button_email_layout{
+
+
+.o-layout-button_email{
     background-color: white; /* Green */
     border: none;
     color: black;
@@ -2054,6 +2060,7 @@ u.relative{
     margin:auto;
     margin-left:auto;
     margin-right: auto;
+    outline:none;
 
 }
 
@@ -2070,3 +2077,113 @@ u.relative{
       }
 
   }
+
+
+  .c-app{
+      display:grid;
+      grid-template-columns: auto 480px 448px auto ;
+      grid-template-rows:auto 160px  280px 160px  auto;
+      height: 100%;
+      column-gap: 240px;
+      row-gap: 40px;
+  }
+
+  .o-smartphone{
+      grid-column-start:3;
+      grid-column-end:4;
+      grid-row-start: 2;
+      grid-row-end: 2;
+
+      height: 720px;
+      width:400px;
+  }
+
+  .c-title-icon-text{
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start: 2;
+    grid-row-end:2;
+    justify-content: center;
+    align-self: center;
+    margin:0
+
+}
+
+.c-title-text{
+    align-self: center;
+}
+
+
+
+.c-text{
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start: 3;
+    grid-row-end:3;
+}
+
+.c-white-text-lg{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+
+}
+
+.c-cyan-text-sm{
+    font-size: 16px;
+    line-height: 24px;
+    color:#00D3FF;
+}
+
+.c-white-text-sm{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold; ;
+    width:80%
+
+}
+
+
+.c-email{
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start: 4;
+    grid-row-end:4;
+
+    align-self: center;
+}
+
+
+.c-label-floating {
+    width: 95%;
+    position: absolute;
+    top: 6px;
+    padding: 4px 8px;
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 200ms ease-in-out;
+    background: transparent;
+  }
+
+  .c-form-field {
+    position: relative;
+  }
+  
+  .c-form-field--option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .c-form-field-option-center {
+    display: flex;
+    justify-content: center;
+  }
+
+.c-form-field:focus-within .c-label-floating,
+.c-label-floating.is-floating {
+  transform: translateY(-36px);
+}
+
+.u-none{
+    display:none;
+}

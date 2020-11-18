@@ -259,13 +259,7 @@ const filter_type = function(){
     list.forEach(showType);
 };
 
-
-
 //#endregion
-
-
-
-
 
 
 
