@@ -105,7 +105,7 @@ const enableListeners = function()
     {
       event.preventDefault();
 
-      if(!isEmpty(email.input.value) && isValidEmailAddress(email.input.value) && !isEmpty(password.input.value))
+      if(!isEmpty(email.input.value) && isValidEmailAddress(email.input.value))
           {
             console.log('succes')
             console.log(`email: ${email.input.value}`)

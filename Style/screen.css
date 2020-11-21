@@ -111,12 +111,8 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
 }
 
-body{
-    height:100%
-}
 
 *,
 *:before,
@@ -865,7 +861,6 @@ more padding on the right to avoid overlap
 }
 
 .c-button:hover {
-    border-color: var(--button-hover-borderColor, var(--global-color-alpha-dark));
     background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
 }
 
@@ -1976,7 +1971,7 @@ u.relative{
 
   .LandingPage_html_background{
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(13,46,104,1) 100%);
-    background-repeat: repeat;
+    min-height: 100%;
 
   }
 
@@ -2065,25 +2060,13 @@ input::placeholder{
 }
 
 
-.o-smartphone{
-    width:480px;
-}
-
-
-  @media(max-width:1130px){
-      .o-smartphone{
-          width:70%;
-          height:100%
-      }
-
-  }
 
 
   .c-app{
       display:grid;
       grid-template-columns: auto 480px 448px auto ;
       grid-template-rows:auto 160px  280px 160px  auto;
-      height: 100%;
+      height: 100vh;
       column-gap: 240px;
       row-gap: 40px;
   }
@@ -2091,11 +2074,12 @@ input::placeholder{
   .o-smartphone{
       grid-column-start:3;
       grid-column-end:4;
-      grid-row-start: 2;
-      grid-row-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 3;
 
-      height: 720px;
-      width:400px;
+      height: 800px;
+      width:480px;
+      justify-self: center;
   }
 
   .c-title-icon-text{
@@ -2126,6 +2110,7 @@ input::placeholder{
     font-size: 24px;
     line-height: 32px;
     font-weight: bold;
+    margin-bottom: 32px;
 
 }
 
@@ -2133,6 +2118,7 @@ input::placeholder{
     font-size: 16px;
     line-height: 24px;
     color:#00D3FF;
+    margin-bottom: 32px;
 }
 
 .c-white-text-sm{
@@ -2154,10 +2140,12 @@ input::placeholder{
 }
 
 
+
+
 .c-label-floating {
     width: 95%;
     position: absolute;
-    top: 6px;
+    top: 5px;
     padding: 4px 8px;
     will-change: transform;
     transform: translateY(0);
@@ -2167,6 +2155,9 @@ input::placeholder{
 
   .c-form-field {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
   
   .c-form-field--option {
@@ -2181,9 +2172,231 @@ input::placeholder{
 
 .c-form-field:focus-within .c-label-floating,
 .c-label-floating.is-floating {
-  transform: translateY(-36px);
+  transform: translateY(-48px);
 }
 
 .u-none{
     display:none;
+}
+
+
+@media(max-width:1130px){
+    .o-smartphone{
+        width:70%;
+        height:100%
+    }
+
+    .c-app{
+        display: grid;
+        grid-template-columns: 1fr 488px 1fr;
+        grid-template-rows:auto 160px  280px 160px  auto;
+    }
+
+    .o-smartphone{
+        
+        grid-column-start:2;
+        grid-column-end:2;
+        grid-row-start: 5;
+        grid-row-end: 5;
+  
+        height: 720px;
+        width:400px;
+        justify-self: center;
+
+    }
+
+    .c-title-text{
+        margin-bottom:40px;
+        font-size: 36px;
+        align-self: center;
+        margin-bottom:0;
+        
+    }
+
+    .c-pokeball{
+        height: 120px;
+        width: 120px;
+    }
+
+}
+
+@media(max-width:640px){
+    .o-smartphone{
+        width:50%;
+        height:75%
+    }
+
+    .c-app{
+        display: grid;
+        grid-template-columns: 1fr 360px 1fr;
+        grid-template-rows:auto 120px  200px 120px  auto;
+    }
+
+    .o-smartphone{
+        
+        grid-column-start:2;
+        grid-column-end:2;
+        grid-row-start: 5;
+        grid-row-end: 5;
+  
+        height: 480px;
+        width:300px;
+        justify-self: center;
+
+    }
+
+    html {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .c-white-text-lg{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
+    
+    }
+
+    .c-cyan-text-sm{
+        font-size: 12px;
+        line-height: 16px;
+        color:#00D3FF;
+    }
+
+    .c-white-text-sm{
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: bold; ;
+        width:80%
+    
+    }
+
+    .o-layout-email-input{
+        height: 36px;;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 12px; 
+        width: 100%;
+        font-size: 16px;
+
+    }
+
+    .o-layout-button_email{
+        padding:8px 36px;
+        font-size: 12px;
+        display: block;
+    }
+
+
+
+    .c-title-text{
+        margin-bottom:40px;
+        font-size: 36px;
+        align-self: center;
+        margin-bottom:0;
+        
+    }
+
+    .c-pokeball{
+        height: 80px;
+        width: 80px;
+    }
+    
+
+}
+
+@media(max-width:420px){
+
+
+    .c-app{
+        display: grid;
+        grid-template-columns: 1fr 320px 1fr;
+        grid-template-rows:1fr 80px  240px 120px  1fr;
+        row-gap: 16px;
+    }
+
+    .o-smartphone{
+        
+        grid-column-start:2;
+        grid-column-end:2;
+        grid-row-start: 5;
+        grid-row-end: 5;
+  
+        height: 400px;
+        width:280px;
+        justify-self: center;
+        
+
+    }
+
+    html {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .c-white-text-lg{
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: bold;
+    
+    }
+
+    .c-cyan-text-sm{
+        font-size: 12px;
+        line-height: 16px;
+        color:#00D3FF;
+    }
+
+    .c-white-text-sm{
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: bold; ;
+        width:80%
+    
+    }
+
+    .o-layout-email-input{
+        height: 24px;;
+        margin-bottom: 16px;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 12px;
+        width: 100%; 
+
+    }
+    .c-title-text{
+        margin-bottom:40px;
+        font-size: 24px;
+        align-self: center;
+        margin-bottom:0;
+        
+    }
+
+    .c-pokeball{
+        height: 64px;
+        width: 64px;
+    }
+
+    .o-layout-button_email{
+        padding:6px 24px;
+        font-size: 12px;
+    }
+
+    .c-title-text{
+        margin-left:8px; ;
+    }
+    
+
+    .o-layout-email-input{
+        height: 36px;;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 12px; 
+        width: 100%;
+        font-size: 16px;
+
+    }
+
 }
