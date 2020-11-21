@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokeintel</title>
+    <link rel="stylesheet" href="Style/normalize.css">
+    <link rel="stylesheet" href="Style/screen.css">
+</head>
+<body>
+    <div class="c-app-pokemon">
+        
+        <div class="c-pokemon">
+            <img class="bulba" src="./Images/Bulba.jpg" alt="Bulba">
+            <div class="c-pokemon-name">bulbasaur</div>
+        </div>
+            
+        <div class="c-stats-1">
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>Attack: 40</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>Defense: 50</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>HP: 60</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="c-stats-2">
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>Speciale Attack: 40</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>Speciale Defense: 50</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+
+            <div class="c-stat-bar-margin-bottom">
+                <p>Speed: 60</p>
+                <div class="progress_bar_color bar_radius">
+                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="c-powerlevel"> 
+            <div class="c-powerlevel-text">Power level is 42%</div>
+            <div class=" bar_radius_powerlevel">
+                <div class="progress_bar_percentage_color_powerlevel bar_radius_powerlevel" style="width:100%"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
