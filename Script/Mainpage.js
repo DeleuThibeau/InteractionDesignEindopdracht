@@ -263,7 +263,6 @@ const showType = (element) => {
     })
 };
 
-
 const filter_type = function(){
     const div = document.querySelector(".overlay-content");
     var list = Array.prototype.slice.call(div.children)
