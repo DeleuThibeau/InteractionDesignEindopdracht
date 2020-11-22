@@ -303,7 +303,7 @@ select {
 
 .o-row--lg {
     padding-top: 48px;
-    padding-bottom: 24px;
+    padding-bottom: 48px;
 }
 
 .o-row--xl {
@@ -367,8 +367,8 @@ select {
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: var(--global-whitespace-lg);
-    padding-bottom: var(--global-whitespace);
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 @media (min-width: 768px) {
@@ -845,36 +845,6 @@ more padding on the right to avoid overlap
     Class to put on form buttons or
 */
 
-.c-button {
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: var(--button-borderRadius, var(--global-borderRadius));
-    border: var(--button-borderWidth, var(--global-borderWidth)) solid var(--button-borderColor, var(--global-color-alpha-dark));
-    background-color: var(--button-backgroundColor, var(--global-color-alpha));
-    color: #fff;
-    padding: calc(var(--global-baseline) * 1.5 - var(--button-borderWidth, var(--global-borderWidth))) var(--global-whitespace-md);
-    line-height: calc(var(--global-baseline) * 3);
-    width: 100%;
-    outline: none;
-    box-shadow: var(--button-boxShadow, 0);
-    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-}
-
-.c-button:hover {
-    background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
-}
-
-.c-button:focus {
-    background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
-    border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
-    box-shadow: var(--global-input-focus-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
-}
-
-.c-button:active {
-    background-color: var(--button-active-backgroundColor, var(--global-color-alpha-dark));
-    border-color: var(--button-active-borderColor, var(--global-color-alpha-dark));
-    box-shadow: var(--button-active-boxShadow, 0);
-}
 
 @media (prefers-color-scheme: dark) {
     .c-button {
@@ -1795,6 +1765,90 @@ u.relative{
 }
 
 
+
+/*================================================================== MAINPAGE===================================================================================*/
+
+
+/*========================== POKEMON OBJECT CREATED IN MAINPAGE.JS ========================*/
+
+/*GRID*/
+
+.c-app-pokemon{
+    display: grid;
+    grid-template-columns:1fr 160px 400px 400px 1fr ;
+    grid-template-rows: 1fr 120px 80PX 1rf;
+    column-gap: 32px;
+    row-gap: 48px;
+    min-height: 100%;
+    margin-bottom: 160px;
+}
+
+/*POKEMON IMAGE AND NAME*/
+
+.c-pokemon{
+    display: flex;
+    grid-row:2;
+    grid-column: 2;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.c-sprite-pokemon{
+    height: 136px;
+    width: 136px;
+}
+
+.c-pokemon-name{
+    height: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*STATS: BASE STATS POSITION*/
+
+.c-stats-1{
+    grid-row: 2;
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+
+}
+
+.c-stats-2{
+    grid-row: 2;
+    grid-column: 4;
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+}
+
+/*STATS: POWER LEVEL: POSITION*/
+
+.c-powerlevel{
+    display: flex;
+    grid-row:3;
+    grid-column: 2 / span 3;
+    align-self: center;
+    flex-direction: column;
+    
+}
+
+.c-powerlevel-text{
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 16px;
+}
+
+.c-stat-bar-margin-bottom{
+    margin-bottom:calc(var(--global-baseline)*1.5)
+}
+
+/*STATS: LAYOUT*/
+
 .progress_bar_color{
     background-color: white;
     width: 100%;
@@ -1807,24 +1861,9 @@ u.relative{
     height: 48px;
 }
 
-
-.bar_radius_powerlevel{
-    border-radius: 48px;
-    width:100%
-}
-
-
-
-
 .progress_bar_percentage_color{
     background-color: cyan;
     height:24px;
-
-}
-
-.progress_bar_percentage_color_powerlevel{
-    background-color: cyan;
-    height:48px;
 
 }
 
@@ -1837,15 +1876,26 @@ u.relative{
     width:100%
 }
 
-.c-pokemon{
-    margin-bottom: 80px;
+.progress_bar_percentage_color_powerlevel{
+
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
+    height:48px;
+
 }
 
+.bar_radius_powerlevel{
+    border-radius: 48px;
+    width:100%
+}
+
+/*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
+
+/*POSITION NAVIGATION: FIXED*/
 .c-navigation{
     position: fixed;
 }
 
-
+/*LAYOUT OVERLAY FILTER*/
 .overlay {
     height: 100%;
     width: 0;
@@ -1859,7 +1909,9 @@ u.relative{
     transition: 0.5s;
   }
   
-  .overlay-content {
+/*OVERLAY ITEMS*/
+
+.overlay-content {
     position: relative;
     top: 5%;
     width: 100%;
@@ -1867,7 +1919,7 @@ u.relative{
     margin-top: 16px;
   }
   
-  .overlay a {
+.overlay a {
     padding: 8px;
     text-decoration: none;
     font-size: 24px;
@@ -1876,16 +1928,16 @@ u.relative{
     transition: 0.3s;
   }
   
-  .overlay a:hover{
+.overlay a:hover{
     color: #f1f1f1;
     background-color: #0D2E68;
   }
 
-  .overlay #water:hover{
+.overlay #water:hover{
     background-color: rgba(0,0,255, 0.7);
 }
 
-  .overlay #fire:hover{
+.overlay #fire:hover{
       background-color: rgba(255,0,0, 0.7);
   }
 
@@ -1955,6 +2007,8 @@ u.relative{
   }
   
 
+/*============================= LOADER OBJECT AND ANIMATION ===========================*/
+
   .loader {
     border: 8px solid white; /* Light grey */
     border-top: 8px solid cyan; /* Blue */
@@ -1973,64 +2027,85 @@ u.relative{
       opacity: 0;
   }
 
-  .pokemon_input{
-      margin:80px auto -60px auto;
-
-  }
-  .pokemon_input_send{
-    margin:80px auto auto auto;
-    width: 50px;
-    height: 20px;
-  }
 
   #hamburger-icon{
-      width: 200px;
-      height: 200px;
+      width: 80px;
+      height: 80px;
+      margin-left: 48px;
   }
 
+/* =======================================================================LANDINGPAGE=========================================================================*/
+  
 
+/*================================== BACKGROUND PAGE ================================*/
   .LandingPage_html_background{
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(13,46,104,1) 100%);
     min-height: 100%;
 
   }
+ 
+/*================================ TITLE: POKEBALL SVG ==============================*/
 
   .o-pokeball{
       height:360px;
       width:360px
   }
 
+/*==================================== TITLE: TEXT ==================================*/
+
   .c-title-text{
       font-size: 48px;
       margin-bottom: 0;
-      margin-left:24px
+      margin-left:24px;
+      align-self: center;
   }
 
   .c-title{
       margin-bottom:64px
   }
 
-  .o-layout-white-text-lg{
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: bold;
-      margin-bottom:32px ;
-  }
+/*===================================== BODY: TEXT ===================================*/
 
-  .o-layout-gray-text-small{
+.c-white-text-lg{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+
+}
+
+.c-cyan-text-sm{
     font-size: 16px;
     line-height: 24px;
     color:#00D3FF;
-    margin-bottom:32px ;
+    margin-bottom: 32px;
 }
 
-.o-layout-white-text{
+.c-white-text-sm{
     font-size: 16px;
     line-height: 21px;
-    font-weight: bold;
-    margin-bottom:72px ;
+    font-weight: bold; ;
     width:80%
+
 }
+
+/*================================== BODY: EMAIL INPUT===============================*/
+.c-form-field {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+  }
+  
+.c-form-field-option-center {
+    display: flex;
+    justify-content: center;
+  }
 
 .c-email{
     width:100%
@@ -2059,8 +2134,61 @@ input::placeholder{
 
 }
 
+/* FLOATING LABEL*/
 
+.c-label-floating {
+    width: 95%;
+    position: absolute;
+    top: 5px;
+    padding: 4px 8px;
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 200ms ease-in-out;
+    background: transparent;
+  }
 
+.c-form-field:focus-within .c-label-floating,
+.c-label-floating.is-floating {
+  transform: translateY(-48px);
+}
+
+/* MAKES ERROR MESSAGE DISAPPEAR*/
+.u-none{
+    display:none;
+}
+
+/*================================ BODY: EMAIL BUTTON=================================*/
+
+.c-button {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--button-borderRadius, var(--global-borderRadius));
+    border: var(--button-borderWidth, var(--global-borderWidth)) solid var(--button-borderColor, var(--global-color-alpha-dark));
+    background-color: var(--button-backgroundColor, var(--global-color-alpha));
+    color: #fff;
+    padding: calc(var(--global-baseline) * 1.5 - var(--button-borderWidth, var(--global-borderWidth))) var(--global-whitespace-md);
+    line-height: calc(var(--global-baseline) * 3);
+    width: 100%;
+    outline: none;
+    box-shadow: var(--button-boxShadow, 0);
+    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+}
+
+.c-button:hover {
+    background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
+}
+
+.c-button:focus {
+    background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
+    border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
+}
+
+.c-button:active {
+    background-color: var(--button-active-backgroundColor, var(--global-color-alpha-dark));
+    border-color: var(--button-active-borderColor, var(--global-color-alpha-dark));
+    box-shadow: var(--button-active-boxShadow, 0);
+}
 
 .o-layout-button_email{
     background-color: white; /* Green */
@@ -2079,10 +2207,8 @@ input::placeholder{
 
 }
 
-
-
-
-  .c-app{
+/*================================ LANDINGPAGE: GRID =================================*/
+.c-landingpage{
       display:grid;
       grid-template-columns: auto 480px 448px auto ;
       grid-template-rows:auto 160px  280px 160px  auto;
@@ -2091,7 +2217,7 @@ input::placeholder{
       row-gap: 40px;
   }
 
-  .o-smartphone{
+.o-smartphone{
       grid-column-start:3;
       grid-column-end:4;
       grid-row-start: 3;
@@ -2102,7 +2228,7 @@ input::placeholder{
       justify-self: center;
   }
 
-  .c-title-icon-text{
+.c-title-icon-text{
     grid-column-start:2;
     grid-column-end:3;
     grid-row-start: 2;
@@ -2113,42 +2239,12 @@ input::placeholder{
 
 }
 
-.c-title-text{
-    align-self: center;
-}
-
-
-
 .c-text{
     grid-column-start:2;
     grid-column-end:3;
     grid-row-start: 3;
     grid-row-end:3;
 }
-
-.c-white-text-lg{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold;
-    margin-bottom: 32px;
-
-}
-
-.c-cyan-text-sm{
-    font-size: 16px;
-    line-height: 24px;
-    color:#00D3FF;
-    margin-bottom: 32px;
-}
-
-.c-white-text-sm{
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: bold; ;
-    width:80%
-
-}
-
 
 .c-email{
     grid-column-start:2;
@@ -2159,117 +2255,7 @@ input::placeholder{
     align-self: center;
 }
 
-
-
-
-.c-label-floating {
-    width: 95%;
-    position: absolute;
-    top: 5px;
-    padding: 4px 8px;
-    will-change: transform;
-    transform: translateY(0);
-    transition: transform 200ms ease-in-out;
-    background: transparent;
-  }
-
-  .c-form-field {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  
-  .c-form-field--option {
-    display: flex;
-    align-items: center;
-  }
-  
-  .c-form-field-option-center {
-    display: flex;
-    justify-content: center;
-  }
-
-.c-form-field:focus-within .c-label-floating,
-.c-label-floating.is-floating {
-  transform: translateY(-48px);
-}
-
-.u-none{
-    display:none;
-}
-
-
-.bulba{
-    width: 80px;
-    height: 80px;
-}
-
-
-.c-app-pokemon{
-    display: grid;
-    grid-template-columns:1fr 160px 400px 400px 1fr ;
-    grid-template-rows: 1fr 120px 80PX 1rf;
-    column-gap: 32px;
-    row-gap: 48px;
-    min-height: 100%;
-    margin-bottom: 80px;
-}
-
-.c-stats-1{
-    grid-row: 2;
-    grid-column: 3;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-
-}
-
-
-.c-stats-2{
-    grid-row: 2;
-    grid-column: 4;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-}
-
-.c-powerlevel{
-    display: flex;
-    grid-row:3;
-    grid-column: 2 / span 3;
-    align-self: center;
-    flex-direction: column;
-    
-}
-
-.c-pokemon{
-    display: flex;
-    grid-row:2;
-    grid-column: 2;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-
-.c-pokemon-name{
-    height: 0px;
-}
-
-
-.c-powerlevel-text{
-    align-self: center;
-    justify-self: center;
-    margin-bottom: 16px;
-}
-
-.c-stat-bar-margin-bottom{
-    margin-bottom:calc(var(--global-baseline)*1.5)
-}
-
+/*============================================================ MEDIA QUERIES VOOR LANDING PAGE ==================================================================*/
 
 @media(max-width:1130px){
     .o-smartphone{
@@ -2277,7 +2263,7 @@ input::placeholder{
         height:100%
     }
 
-    .c-app{
+    .c-landingpage{
         display: grid;
         grid-template-columns: 1fr 488px 1fr;
         grid-template-rows:auto 160px  280px 160px  auto;
@@ -2317,7 +2303,7 @@ input::placeholder{
         height:75%
     }
 
-    .c-app{
+    .c-landingpage{
         display: grid;
         grid-template-columns: 1fr 360px 1fr;
         grid-template-rows:auto 120px  200px 120px  auto;
@@ -2400,7 +2386,7 @@ input::placeholder{
 @media(max-width:420px){
 
 
-    .c-app{
+    .c-landingpage{
         display: grid;
         grid-template-columns: 1fr 320px 1fr;
         grid-template-rows:1fr 80px  240px 120px  1fr;
@@ -2491,3 +2477,6 @@ input::placeholder{
     }
 
 }
+
+
+/*============================================================== MEDIA QUERIES VOOR APP PAGE ====================================================================*/
