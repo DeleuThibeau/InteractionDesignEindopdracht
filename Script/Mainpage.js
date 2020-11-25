@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    filter_type();
+    showType();
 });
+
+let filterType =""
 
 //#region ===== API & pokemon HTML //
 
@@ -18,7 +20,7 @@ async function getAllPokemon_API(url) {
     let next = data.next
     //console.log("the huidige url in de API function is: \n" + nextcall)
     nextcall = next
-    console.log(resultLijst)
+    //console.log(resultLijst)
     //console.log("the next url in de API function is: \n" + nextcall)
 
     resultLijst.forEach(element =>setTimeout(() => { getDetailsPokemon_API(element.url) }, 500))
@@ -135,7 +137,7 @@ animateIn.forEach(x => {
 //#region ===== Sidebar  //
 
 document.getElementById("hamburger-icon").addEventListener("click",function(){
-    document.getElementById("myNav").style.width = "20%";
+    document.getElementById("myNav").style.width = "30%";
 });
 
 document.getElementById("id_closebtn").addEventListener("click",function(){
@@ -147,13 +149,17 @@ document.getElementById("id_closebtn").addEventListener("click",function(){
 //#region ===== Filter  //
 
 
-const showType = (element) => {
-    document.getElementById(`${element.id}`).addEventListener("click", async function(){
-        // console.log(`Er werd op ${element.id} geklikt`)
+const showType = () => {
+
+
+
+
+    document.getElementById("water").addEventListener("click", async function(){
+        console.log(`Er werd op water geklikt`)
 
         let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=10"
         const pokemonList = document.querySelector('.js-pokemonlist');
-
+        filterType = "water"
         // Eerst bouwen we onze url op
         url = nextcall;
         // Met de fetch API proberen we de data op te halen.		
@@ -178,13 +184,15 @@ const showType = (element) => {
             fetch(url)
                 .then(result => {
                 let data = result.json().then(object => { 
-                // console.log(object.types)
+                 //console.log(object)
                 // console.log(object.types[0].type.name)
                 // console.log(object.types[1].type.name)
                 let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100;
-                console.log(object.types)
+                //console.log(object.types)
+                //console.log(element)
                 
-                if(element.id == object.types[0].type.name){
+                console.log(filterType)
+                if(filterType == object.types[0].type.name){
                     pokemonList.innerHTML = `
                     <div class="c-app-pokemon">
                     
@@ -263,12 +271,26 @@ const showType = (element) => {
     })
 };
 
-const filter_type = function(){
-    const div = document.querySelector(".overlay-content");
-    var list = Array.prototype.slice.call(div.children)
+// const filter_type = function(){
+//     const div = document.querySelector(".overlay-content");
+//     //console.log(div)
+//     var list = Array.prototype.slice.call(div.children)
+//     //console.log(list)
+//     var typeList = []
 
-    list.forEach(showType);
-};
+//     for(i = 0 ; i < 32; i++)
+//     {
+//         if(i%2 == 1){
+//             //console.log(list[i].id);
+//             typeList.push(list[i].id)
+//         }
+//     }
+
+//     //console.log(typeList)
+//     //list.forEach(element => console.log(element.id))
+
+//     typeList.forEach(showType);
+// };
 
 //#endregion
 
