@@ -759,7 +759,7 @@ select {
 }
 
 .c-input:hover {
-    border-color:  var(--global-input-hover-borderColor));
+    border-color:  var(--global-input-hover-borderColor);
 }
 
 .c-input:focus,
@@ -1758,7 +1758,17 @@ No media query since this is the default in mobile first design
 
 .u-absolute{
     position:absolute;
-    
+    z-index: 10;
+    top:80px;
+    left:80px 
+}
+
+.u-absolute-icon{
+    position:absolute;
+    z-index: 20;
+    top:-48px;
+    left:-40px 
+
 }
 
 u.relative{
@@ -1773,6 +1783,26 @@ u.relative{
 /*========================== POKEMON OBJECT CREATED IN MAINPAGE.JS ========================*/
 
 /*GRID*/
+
+.c-header{
+    display: grid;
+    grid-template-columns:80px 1fr ;
+    grid-template-rows: 1fr;
+    column-gap: 32px;
+    row-gap: 48px;
+    min-height: 100%;
+
+}
+
+.c-navigation{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.c-title-app{
+    grid-row: 1;
+    grid-column: 2;
+}
 
 .c-app-pokemon{
     display: grid;
@@ -1895,6 +1925,11 @@ u.relative{
 /*POSITION NAVIGATION: FIXED*/
 .c-navigation{
     position: fixed;
+    background: transparent;
+    height: 1px;
+    width:1px;
+    
+    
 }
 
 /*TITLE AND MOTTO*/
@@ -1919,6 +1954,7 @@ font-size: 24px;
     background-color: rgba(0,0,0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
+    z-index: 30;
   }
   
 /*OVERLAY ITEMS*/
@@ -2049,7 +2085,7 @@ font-size: 24px;
   #hamburger-icon{
       width: 80px;
       height: 80px;
-      margin-left: 48px;
+
   }
 
 /* =======================================================================LANDINGPAGE=========================================================================*/
@@ -2517,7 +2553,7 @@ input::placeholder{
     #hamburger-icon{
         width: 60px;
         height: 60px;
-        margin-left: 40px;
+
     }
 
     .c-app-pokemon{
@@ -2616,7 +2652,6 @@ input::placeholder{
     #hamburger-icon{
         width: 60px;
         height: 60px;
-        margin-left: 48px;
     }
 
     .c-app-pokemon{
@@ -2750,7 +2785,15 @@ input::placeholder{
     #hamburger-icon{
         width: 40px;
         height: 40px;
-        margin-left: 40px;
+    }
+
+    .u-absolute-icon{
+        position:absolute;
+        z-index: 20;
+        top:-20px;
+        left: -24px;
+
+    
     }
 
     .c-app-pokemon{
@@ -2883,9 +2926,10 @@ input::placeholder{
     }
 
     #hamburger-icon{
-        width: 32px;
-        height: 32px;
-        margin-left: 32px;
+        width: 40px;
+        height: 40px;
+        left:-64px;
+        top:-56px
     }
 
     .c-app-pokemon{
@@ -3020,7 +3064,7 @@ input::placeholder{
     #hamburger-icon{
         width: 32px;
         height: 32px;
-        margin-left: 32px;
+
     }
 
     .c-app-pokemon{
