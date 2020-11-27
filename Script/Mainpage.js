@@ -4,13 +4,12 @@
 let filterType ="showAll";
 let html_PokemonList;
 let nextcall ="https://pokeapi.co/api/v2/pokemon?limit=10"
-let nextcallFilter = "https://pokeapi.co/api/v2/pokemon?limit=10"
 
 // #endregion
 
 // #region ===== API & pokemon HTML //
 
-async function getAllPokemon_API(url) {
+const getAllPokemon_API = async (url) => {
     // Eerst bouwen we onze url op
     url = nextcall;
 	// Met de fetch API proberen we de data op te halen.		
@@ -38,66 +37,60 @@ async function getAllPokemon_API(url) {
     }
 };
 
-    const getDetailsPokemon_API = async (url) => {
-        await setTimeout(() => { 
-            fetch(url)
-            .then(result => {
-                result.json().then(object => { 
-                //console.log(object.types[0].type.name)
-                //console.log(object.types[1].type.name)
-                let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
-                
-                html_PokemonList.innerHTML += createPokemonHtml(object,powerlevel)
-                
-                if(object.id == 893)
-                {
-                    var element = document.getElementById("id_loader");
-                    element.classList.add("o-hide")
+
+const getDetailsPokemon_API = async (url) => {
+    await setTimeout(() => { 
+        fetch(url)
+        .then(result => {
+            result.json().then(object => { 
+            //console.log(object.types[0].type.name)
+            //console.log(object.types[1].type.name)
+            let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100
+            
+            html_PokemonList.innerHTML += createPokemonHtml(object,powerlevel)
+            
+            if(object.id == 893)
+            {
+                var element = document.getElementById("id_loader");
+                element.classList.add("o-hide")
                 }
             });
         });
     },500)
 };
 
-// #endregion
-
-// #region ===== Filter  //
 
 const getDetailsFilteredPokemon_API = async (url) => {
 
     await setTimeout(() => { 
-    fetch(url)
-        .then(result => {
-        let data = result.json().then(object => { 
-         //console.log(object)
-        // console.log(object.types[0].type.name)
-        // console.log(object.types[1].type.name)
-        let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100;
-        //console.log(object.types)
-        //console.log(element)
-        
-        //console.log(`${filterType} - ${object.name}`);
-        //console.log(object);
+        fetch(url)
+            .then(result => {
+            result.json().then(object => { 
 
-        let listFilteredPokemon = "";
-        if(filterType == object.types[0].type.name){ 
-            listFilteredPokemon += createPokemonHtml(object, powerlevel);
-            //console.log(`${filterType} - ${object.name} SUCCEEDED`);
-        }
-        //console.log(listFilteredPokemon);
-        html_PokemonList.innerHTML += listFilteredPokemon;
-    });
-        //console.log(data)
-    
-    });
+                let powerlevel = ((object.stats[0].base_stat + object.stats[1].base_stat + object.stats[2].base_stat +object.stats[3].base_stat + object.stats[4].base_stat+ object.stats[5].base_stat)/1125)*100;
+
+                let listFilteredPokemon = "";
+                if(filterType == object.types[0].type.name)
+                { 
+                    listFilteredPokemon += createPokemonHtml(object, powerlevel);
+                }
+
+                html_PokemonList.innerHTML += listFilteredPokemon;
+
+            });  
+        });
     }, 100)
-
 };
 
 
+// #endregion
+
+// #region ===== Filter  //
+
 const ShowFilterType = (element) => {
 
-    document.getElementById(element).addEventListener("click", async function(){
+    document.getElementById(element).addEventListener("click", async function()
+    {
         //console.log(`Er werd op ${element} geklikt`)
         filterType = element;
         console.log(filterType)
@@ -109,24 +102,21 @@ const ShowFilterType = (element) => {
 };
 
 
-const FilterSelector = function(){
+const FilterSelector = function()
+{
+
     const div = document.querySelector(".overlay-content");
-    //console.log(div)
+
     var list = Array.prototype.slice.call(div.children)
-    //console.log(list)
+
     var typeList = []
 
     for(i = 0 ; i < 32; i++)
     {
         if(i%2 == 1){
-            //console.log(list[i].id);
             typeList.push(list[i].id)
         }
     }
-
-    //console.log(typeList)
-    //list.forEach(element => console.log(element.id))
-
     typeList.forEach(ShowFilterType);
 };
 
@@ -211,12 +201,8 @@ const animateIn = document.querySelectorAll(".js-animate-in-reset");
 observerR = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-                
-                //console.log("Visible", entry)
-                //console.log("De url die wordt gebruikt bij de IntersectionObserver is : \n" + nextcall)
-                //console.log(nextcall)
-                getAllPokemon_API(nextcall);
 
+                getAllPokemon_API(nextcall);
         } 
     });
 });
@@ -243,7 +229,6 @@ document.getElementById("id_closebtn").addEventListener("click",function(){
 document.addEventListener('DOMContentLoaded', function() {
     html_PokemonList = document.querySelector('.js-pokemonlist');
     FilterSelector();
-
 });
 // #endregion
 
