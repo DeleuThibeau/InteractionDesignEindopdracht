@@ -122,7 +122,7 @@ const FilterSelector = function()
 
 // #endregion
 
-// #region ==== HTML creation //
+// #region ==== HTML filled with API values //
 
 const createPokemonHtml = function(object, powerlevel){
     const htmlObj = `
