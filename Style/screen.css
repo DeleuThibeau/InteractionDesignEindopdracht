@@ -103,8 +103,8 @@
 */
 
 html {
-    background-color: red;
-    color: white;
+    background-color: var(--global-page-backgroundColor);
+    color: var(--global-page-color);
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
