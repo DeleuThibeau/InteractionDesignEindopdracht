@@ -194,39 +194,45 @@ const createPokemonHtml = function(object, powerlevel){
 
 // #endregion
 
-// #region ===== Autoscroll  //
-const animateIn = document.querySelectorAll(".js-animate-in-reset");
 
-observerR = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-
-                getAllPokemon_API(nextcall);
-        } 
-    });
-});
-
-animateIn.forEach(x => {
-    observerR.observe(x)
-})
-
-// #endregion
-
-// #region ===== Sidebar  //
-
-document.getElementById("js-button-open").addEventListener("click",function(){
-    document.getElementById("myNav").style.width = "30%";
-});
-
-document.getElementById("js-button-close").addEventListener("click",function(){
-    document.getElementById("myNav").style.width = "0%";
-});
 
 // #endregion
 
 // #region ==== DOM //
 document.addEventListener('DOMContentLoaded', function() {
+
+    // #region ===== Sidebar  //
+
+    document.getElementById("js-button-open").addEventListener("click",function(){
+    document.getElementById("myNav").style.width = "30%";
+    });
+
+    document.getElementById("js-button-close").addEventListener("click",function(){
+    document.getElementById("myNav").style.width = "0%";
+    });
+
+    // #region ===== Autoscroll  //
+    const animateIn = document.querySelectorAll(".js-animate-in-reset");
+
+    observerR = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                    getAllPokemon_API(nextcall);
+            } 
+        });
+    });
+
+    animateIn.forEach(x => {
+        observerR.observe(x)
+    })
+
+    // #endregion
+
+
+
     html_PokemonList = document.querySelector('.js-pokemonlist');
     FilterSelector();
+    
 });
 // #endregion
