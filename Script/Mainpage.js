@@ -1,4 +1,3 @@
-
 // #region ==== Global Variables //
 
 let filterType ="showAll";
@@ -133,7 +132,7 @@ const createPokemonHtml = function(object, powerlevel){
             <div class="c-pokemon-name">${object.name}</div>
         </div>
             
-        <div class="c-stats-1">
+        <div class="c-stats-1 u-stats-fz">
 
             <div class="c-stat-bar-margin-bottom">
                 <p>Attack: <b>${object.stats[1].base_stat}</b></p>
@@ -157,7 +156,7 @@ const createPokemonHtml = function(object, powerlevel){
             </div>
         </div>
 
-        <div class="c-stats-2">
+        <div class="c-stats-2 u-stats-fz">
 
             <div class="c-stat-bar-margin-bottom">
                 <p>Speciale Attack: <b>${object.stats[3].base_stat }</b></p>
@@ -215,11 +214,11 @@ animateIn.forEach(x => {
 
 // #region ===== Sidebar  //
 
-document.getElementById("hamburger-icon").addEventListener("click",function(){
+document.getElementById("js-button-open").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "30%";
 });
 
-document.getElementById("id_closebtn").addEventListener("click",function(){
+document.getElementById("js-button-close").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "0%";
 });
 
@@ -231,57 +230,3 @@ document.addEventListener('DOMContentLoaded', function() {
     FilterSelector();
 });
 // #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 1. Variabelen
-//     - loading
-//     - nextCall -> standaard waarde /pokemon?limit=20
-
-// 2. Functies (init function)
-//     - Pokemon API Call
-//         -> Object bevat next => nextCall overschrijven met de next waarde uit dit Object
-//         -> Loopen door resultaat en de links in doorsturen naar nieuwe Functies
-
-//     -> Pokemon Detail API Call
-//         -> URL krijg je mee uit loop van hierboven -> Call Uitvoeren
-//             -> Call van pokemon klaar => HTML Objectje (je detail html om een pokemon op je home page te zetten opmaken) en pushen in hoofdDIV
-
-
-
-
-

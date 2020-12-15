@@ -7,77 +7,81 @@
         <link rel="stylesheet" href="Style/normalize.css">
         <link rel="stylesheet" href="Style/screen.css">
         <link rel="icon" type="image/png" href="./Images/pokeball_Tekengebied 1.svg"/>
-        <script defer src="Script/Mainpage.js"></script>
+        <script defer src="./script/Mainpage.js"></script>
     </head>
 
     <body>
         <div class='o-container'>
 
             <div id="myNav" class="overlay">
-                <div class="closebtn" id="id_closebtn">&times;</div>
+                <button class="closebtn" id="js-button-close">
+                    <svg class="c-close-icon" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
 
                 <div class="overlay-content">
 
-                <label class="c-type o-normal" for="showAll">Show all</label>
-                <input class="o-hide-accessible" type="radio" id="showAll" name="Type">
+                    <label class="c-type o-normal" for="showAll">Show all</label>
+                    <input class="o-hide-accessible" type="radio" id="showAll" name="Type">
 
-                <label class="c-type o-water" for="water">water</label>
-                <input class="o-hide-accessible" type="radio" id="water" name="Type">
+                    <label class="c-type o-water" for="water">water</label>
+                    <input class="o-hide-accessible" type="radio" id="water" name="Type">
 
-                <label class="c-type o-fire" for="fire">Fire</label>
-                <input class="o-hide-accessible" type="radio" id="fire" name="Type">
-                
-                <label class="c-type o-grass" for="grass">Grass</label>
-                <input class="o-hide-accessible" type="radio" id="grass" name="Type">
+                    <label class="c-type o-fire" for="fire">Fire</label>
+                    <input class="o-hide-accessible" type="radio" id="fire" name="Type">
+                    
+                    <label class="c-type o-grass" for="grass">Grass</label>
+                    <input class="o-hide-accessible" type="radio" id="grass" name="Type">
 
-                <label class="c-type o-electric" for="electric">Electric</label>
-                <input class="o-hide-accessible" type="radio" id="electric" name="Type">
-                
-                <label class="c-type o-ground" for="ground">Ground</label>
-                <input class="o-hide-accessible" type="radio" id="ground" name="Type">
+                    <label class="c-type o-electric" for="electric">Electric</label>
+                    <input class="o-hide-accessible" type="radio" id="electric" name="Type">
+                    
+                    <label class="c-type o-ground" for="ground">Ground</label>
+                    <input class="o-hide-accessible" type="radio" id="ground" name="Type">
 
-                <label class="c-type o-rock" for="rock">Rock</label>
-                <input class="o-hide-accessible" type="radio" id="rock" name="Type">
+                    <label class="c-type o-rock" for="rock">Rock</label>
+                    <input class="o-hide-accessible" type="radio" id="rock" name="Type">
 
-                <label class="c-type o-steel" for="steel">Steel</label>
-                <input class="o-hide-accessible" type="radio" id="steel" name="Type">
+                    <label class="c-type o-steel" for="steel">Steel</label>
+                    <input class="o-hide-accessible" type="radio" id="steel" name="Type">
 
-                <label class="c-type o-dragon" for="dragon">Dragon</label>
-                <input class="o-hide-accessible" type="radio" id="dragon" name="Type">
+                    <label class="c-type o-dragon" for="dragon">Dragon</label>
+                    <input class="o-hide-accessible" type="radio" id="dragon" name="Type">
 
-                <label class="c-type o-ice" for="ice">Ice</label>
-                <input class="o-hide-accessible" type="radio" id="ice" name="Type">
+                    <label class="c-type o-ice" for="ice">Ice</label>
+                    <input class="o-hide-accessible" type="radio" id="ice" name="Type">
 
-                <label class="c-type o-psychic" for="psychic">Psychic</label>
-                <input class="o-hide-accessible" type="radio" id="psychic" name="Type">
+                    <label class="c-type o-psychic" for="psychic">Psychic</label>
+                    <input class="o-hide-accessible" type="radio" id="psychic" name="Type">
 
-                <label class="c-type o-poison" for="poison">Poison</label>
-                <input class="o-hide-accessible" type="radio" id="poison" name="Type">
+                    <label class="c-type o-poison" for="poison">Poison</label>
+                    <input class="o-hide-accessible" type="radio" id="poison" name="Type">
 
-                <label class="c-type o-bug" for="bug">Bug</label>
-                <input class="o-hide-accessible" type="radio" id="bug" name="Type">
+                    <label class="c-type o-bug" for="bug">Bug</label>
+                    <input class="o-hide-accessible" type="radio" id="bug" name="Type">
 
-                <label class="c-type o-fairy" for="fairy">Fairy</label>
-                <input class="o-hide-accessible" type="radio" id="fairy" name="Type">
+                    <label class="c-type o-fairy" for="fairy">Fairy</label>
+                    <input class="o-hide-accessible" type="radio" id="fairy" name="Type">
 
-                <label class="c-type o-ghost" for="ghost">Ghost</label>
-                <input class="o-hide-accessible" type="radio" id="ghost" name="Type">
+                    <label class="c-type o-ghost" for="ghost">Ghost</label>
+                    <input class="o-hide-accessible" type="radio" id="ghost" name="Type">
 
-                <label class="c-type o-fighting" for="fighting">Fighting</label>
-                <input class="o-hide-accessible" type="radio" id="fighting" name="Type">
+                    <label class="c-type o-fighting" for="fighting">Fighting</label>
+                    <input class="o-hide-accessible" type="radio" id="fighting" name="Type">
 
-                <label class="c-type o-normal" for="normal">Normal</label>
-                <input class="o-hide-accessible" type="radio" id="normal" name="Type">
+                    <label class="c-type o-normal" for="normal">Normal</label>
+                    <input class="o-hide-accessible" type="radio" id="normal" name="Type">
 
 
                 </div>
             </div>
 
-            <section class=" o-row o-row--lg">
-                <button class="c-navigation o-layout o-layout__item o-layout--justify-start o-layout--align-center u-absolute">
-                    <svg class="u-absolute-icon" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 134.16 134.16"><g transform="translate(-218.36 -143.97)"><rect width="124.16" height="124.16" rx="62.08" transform="translate(223.36 148.97)" fill="#0069b4" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="10"/><path d="M343.18,206.07h0c0,37.51-25.86,62.08-57.77,62.08h0c-31.9,0-58.1-25-57.76-62.08h0" fill="#fff"/><rect width="124.16" height="14.01" transform="translate(223.36 204.04)" fill="#1d1d1b" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.25"/><rect width="42.52" height="42.52" rx="21.26" transform="translate(264.18 189.79)" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="10"/></g></svg>
+            
+
+            <section class=" o-row o-row--lg ">
+                <button class="c-nav-button o-layout o-layout__item o-layout--justify-start o-layout--align-center" id="js-button-open">
+                    <svg class="c-nav-icon" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 134.16 134.16"><g transform="translate(-218.36 -143.97)"><rect width="124.16" height="124.16" rx="62.08" transform="translate(223.36 148.97)" fill="#0069b4" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="10"/><path d="M343.18,206.07h0c0,37.51-25.86,62.08-57.77,62.08h0c-31.9,0-58.1-25-57.76-62.08h0" fill="#fff"/><rect width="124.16" height="14.01" transform="translate(223.36 204.04)" fill="#1d1d1b" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.25"/><rect width="42.52" height="42.52" rx="21.26" transform="translate(264.18 189.79)" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="10"/></g></svg>
                 </button>
-                <div class="o-layout o-layout__item o-layout--justify-center o-layout--align-center u-relative">
+                <div class="o-layout o-layout__item o-layout--justify-center o-layout--align-center ">
                     <p class="c-title-app o-layout o-layout__item o-layout--justify-center">PokIntel</p>
                     <p class="c-motto-app">The easy way to find pokemon stats!</p>
                 </div>
@@ -90,7 +94,7 @@
             </section>
 
             <div class="o-row o-row--lg o-layout o-layout--justify-center o-layout--align-center">
-                <div class="loader" id="id_loader"></div>
+                <div class="c-loader" id="id_loader"></div>
             </div>
 
             <div class="watcher js-animate-in-reset">

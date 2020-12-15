@@ -65,7 +65,7 @@ const doubleCheckEmailAddress = function ()
 
   else
   {
-    addErrors(email.field, email.errorMessage, "Field is invalid")
+    addErrors(email.field, email.errorMessage, ": Field is invalid")
   }
 }
 

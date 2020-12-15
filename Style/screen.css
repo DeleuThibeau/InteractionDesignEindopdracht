@@ -9,38 +9,64 @@
 \*------------------------------------*/
 
 :root {
-    /* Global colors */
+    /* Global colors general */
     --global-color-alpha-light: #4F95FF;
     --global-color-alpha: #3385FF;
     --global-color-alpha-dark: #2E77E6;
     --global-color-alpha-x-dark: #1B4186;
-    --global-color-alpha-transparent: #3385ffbf;
     --global-color-alpha-x-transparent: #3385ff4d;
 
-    --global-color-neutral-xxxx-light: #F5F6FA;
-    --global-color-neutral-xxx-light: #E2E3E7;
-    --global-color-neutral-xx-light: #caccd4;
-    --global-color-neutral-x-light: #b5b6c0;
-    --global-color-neutral-light: #a0a1ad;
-    --global-color-neutral: #8b8c9a;
-    --global-color-neutral-dark: #757787;
-    --global-color-neutral-x-dark: #606274;
-    --global-color-neutral-xx-dark: #4b4c60;
-    --global-color-neutral-xxx-dark: #35374d;
-    --global-color-neutral-xxxx-dark: #0D2E68;
+    /* Global colors error input landingpage*/
     --global-color-error: #FF3333;
     --global-color-error-transparent: #FF3333bf;
-    --global-color-error-x-transparent: #FF33334d;
+
+    /* Global colors Text*/
+    --global-color-blueText:#00D3FF;
+    --global-color-neutral-xxxxx-light: #FFFFFF;
+    --global-color-neutral-xxxxx-dark: black;
+
+    /* Global statbar*/
+    --global-color-statbar:cyan;
+    --global-color-powerlevel:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
+
+     /* Global colors Mainpage overlay*/
+    --global-color-background-overlay: rgba(0,0,0, 0.9);
+    --global-color-neutral-xxxx-dark: #0D2E68;
+
+    /* Global colors types*/
+    --global-color-type-neutral:#f1f1f1;
+    --global-color-type-water:rgba(0,0,255, 0.7);
+    --global-color-type-fire:rgba(255,0,0, 0.7);
+    --global-color-type-grass: green;
+    --global-color-type-electric: yellow;
+    --global-color-type-ground: #b5651D;
+    --global-color-type-rock: #654321;
+    --global-color-type-steel: gray;
+    --global-color-type-ice: var(--global-color-statbar);
+    --global-color-type-psychic: hotpink;
+    --global-color-type-poison: purple;
+    --global-color-type-bug:#006400;
+    --global-color-type-fairy:#FFB6C1;
+    --global-color-type-ghost:#301934;
+    --global-color-type-fighting: brown;
+    --global-color-type-normal: var(--global-color-neutral-xxxxx-light);
+    
+
 
     /* global page settings */
-    --global-page-color: var(--global-color-neutral-xxxx-dark);
-    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-page-backgroundColorLandingpage: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(13,46,104,1) 100%);
+    --global-page-backgroundColorMainpage: var(--global-color-neutral-xxxx-dark);
     --global-selection-backgroundColor: var(--global-color-alpha);
 
     /* border radius */
-    --global-borderRadius: 3px;
-    --global-borderWidth: 1px;
-    --global-bar-radius: 16px;
+    --global-borderRadius-email: 0.625rem;
+    --global-borderRadius-button: 1.5rem;
+    --global-borderWidth: 0.0625rem;
+    --global-bar-radius: 1rem;
+    --global-bar-radius-md: 1.5rem;
+
+
+    --global-border : 0.0625rem solid var(--global-color-neutral-xxxxx-light);
 
     /* transitions */
     --global-transitionEasing-out: ease-out;
@@ -51,46 +77,70 @@
 
 
      /* Baseline settings */
-    --global-baseline: 8px;         
-    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-baseline-x10: 0.5rem;/* = 8px */
+    --global-baseline-x15: 0.75rem; /* = 12px */
+    --global-baseline-x20: 1rem; /* = 16px */
+    --global-baseline-x30:1.5rem; /* = 24px */
+    --global-baseline-x40:2rem; /* = 32px */
+    --global-baseline-x50:2.5rem; /* = 40px */
+    --global-baseline-x60:3rem; /* = 48px */
+    --global-baseline-x80:4rem; /* = 64px */
+    --global-baseline-x100:5rem; /* = 80px */
+    --global-baseline-x120:6rem; /* = 96px */
 
-    --global-whitespace-xs: calc(var(--global-baseline) * .5); /* = 4px */
-    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
-    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
-    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    /* Font Sizes */
+    --global-fz-sm-xx: var(--global-baseline-x10); /* = 8px */
+    --global-fz-sm-x: calc(var(--global-baseline-x10)*1.25); /* = 10px */
+    --global-fz-sm: var(--global-baseline-x15); /* = 12px */
+    --global-fz-md: var(--global-baseline-x20); /* = 16px */
+    --global-fz-lg: var(--global-baseline-x30); /* = 24px */
+
+    /* Heights => for bars main app */
+    --global-height-sm:var(--global-baseline-x10);/* = 8px */
+    --global-height-md:var(--global-baseline-x15);/* = 12px */
+    --global-height-md-x:var(--global-baseline-x20);/* = 16px */
+    --global-height-lg:var(--global-baseline-x30);/* = 24px */
+    --global-height-lg-x:var(--global-baseline-x40);/* = 32px */
+    --global-height-lg-xx:var(--global-baseline-x50);/* = 40px */
+    --global-height-lg-xxx:var(--global-baseline-x60);/* = 48px */
+
+    /* Widths => for bars main app */
+    --global-width-sm:var(--global-baseline-x10);/* = 8px */
+    --global-width-md:var(--global-baseline-x15);/* = 12px */
+    --global-width-md-x:var(--global-baseline-x20);/* = 16px */
+    --global-width-lg:var(--global-baseline-x30);/* = 24px */
+    --global-width-lg-x:var(--global-baseline-x40);/* = 32px */
+    --global-width-lg-xx:var(--global-baseline-x50);/* = 40px */
+    --global-width-lg-xxx:var(--global-baseline-x60);/* = 48px */
+
+
+
+    --global-whitespace-md-plus4: calc(var(--global-baseline-x10) * 2.5); /* = 20px */         
+    --global-whitespace: calc(var(--global-baseline-x10) * 3); /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline-x10) * .5); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline-x10) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline-x10) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline-x10) * 4); /*  = 32px */
     --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
     --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
 
     /* forms */
-    --global-label-color: var(--global-color-neutral-xx-dark);
-    --global-placeholder-color: var(--global-color-neutral-x-light);
-    --global-input-backgroundColor: White;
-    --global-input-color: var(--global-color-neutral-xxxx-dark);
-    --global-input-borderColor: var(--global-color-neutral-xxx-light);
-    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
-    --global-input-focus-borderColor: var(--global-color-alpha);
-    --global-input-error-borderColor: var(--global-color-error);
-    --global-input-focus-boxShadowSpread: 0 0 0 3px;
+    --global-input-focus-boxShadowSpread: 0 0 0 0.1875rem;
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+    --global-page-color: var(--global-color-neutral-xxxxx-light);
+    --global-label-color: var(--global-color-neutral-xx-light);
+    --global-placeholder-color: var(--global-color-neutral-dark);
+    --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
+    --global-input-color: var(--global-color-neutral-xxxx-light);
+    --global-input-borderColor: var(--global-input-backgroundColor);
+    --global-input-hover-borderColor: var(--global-input-backgroundColor);
+    --global-input-focus-borderColor: var(--global-input-backgroundColor);
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-light);
+    --global-input-error-boxShadowColor: var(--global-color-error-transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --global-page-color: White;
-        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
-
-        --global-label-color: var(--global-color-neutral-xx-light);
-        --global-placeholder-color: var(--global-color-neutral-dark);
-        --global-input-backgroundColor: var(--global-color-neutral-xxxx-dark);
-        --global-input-color: var(--global-color-neutral-xxxx-light);
-        --global-input-borderColor: var(--global-input-backgroundColor);
-        --global-input-hover-borderColor: var(--global-input-backgroundColor);
-        --global-input-focus-borderColor: var(--global-input-backgroundColor);
-        --global-input-focus-boxShadowColor: var(--global-color-alpha-transparent);
-        --global-input-error-boxShadowColor: var(--global-color-error-transparent);
-    }
-}
 
 /*------------------------------------*\
 #GENERIC
@@ -103,15 +153,18 @@
 */
 
 html {
-    background-color: blue;
-    color: white;
+    background: var(--global-page-backgroundColorMainpage);
+    color: var(--global-page-color);
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0px;
+    min-height: 100vh;
 }
+
 
 
 *,
@@ -167,29 +220,29 @@ h3 {
 }
 
 h1 {
-    font-size: 36px;
-    line-height: calc(var(--global-baseline) * 6);
+    font-size: 2.25rem;
+    line-height: calc(var(--global-baseline-x10) * 6);
     margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
-    font-size: 32px;
-    line-height: calc(var(--global-baseline) * 5);
+    font-size: 2rem;
+    line-height: calc(var(--global-baseline-x10) * 5);
     margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
-    font-size: 26px;
-    line-height: calc(var(--global-baseline) * 4);
+    font-size: 1.625rem;
+    line-height: calc(var(--global-baseline-x10) * 4);
     margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: calc(var(--global-baseline) * 3);
+    line-height: calc(var(--global-baseline-x10) * 3);
     margin: 0 0 var(--global-whitespace);
 }
 
@@ -200,7 +253,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 var(--global-baseline);
+    margin: 0 0 var(--global-baseline-x10);
 }
 
 ul,
@@ -215,8 +268,8 @@ li ol {
 
 blockquote {
     font-style: normal;
-    font-size: 23px;
-    line-height: calc(var(--global-baseline) * 6);
+    font-size: 1.5rem;
+    line-height: calc(var(--global-baseline-x10) * 6);
     margin: 0 0 var(--global-whitespace);
 }
 
@@ -227,8 +280,8 @@ blockquote * {
 
 figcaption {
     font-weight: 400;
-    font-size: 12px;
-    line-height: calc(var(--global-baseline) * 2);
+    font-size: 0.75rem;
+    line-height: calc(var(--global-baseline-x10) * 2);
     margin-top: var(--global-whitespace-xxs);
 }
 
@@ -274,55 +327,44 @@ select {
 }
 
 
-/*------------------------------------*\
-#OBJECTS
-\*------------------------------------*/
+/*#region Mainpage*/
+
+
+
+.c-input:focus,
+.c-input:active {
+    border-color: transparent;
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
+}
 
 /*
-    Objects: Row
+    Objects: Layout
     ---
-    Creates a horizontal row that stretches the viewport and adds padding around children
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
 */
 
-.o-row {
-    position: relative;
-    padding: 24px 24px 0;
-}
-.o-row-powerlevel{
-    margin: auto;
-    width: 50%;
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.o-row--login {
-    min-height: 100vh;
-    display: flex;
+.o-layout__item {
+    width: 100%;
+    
+}
+
+
+.o-layout--align-center {
     align-items: center;
 }
 
-/* size modifiers */
 
-.o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 48px;
-}
-
-.o-row--xl {
-    padding-top: 72px;
-    padding-bottom: 48px;
-}
-
-@media (min-width: 768px) {
-    .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
-    }
-}
-
-@media (min-width: 992px) {
-    .o-row--xl {
-        padding-top: 96px;
-        padding-bottom: 72px;
-    }
+.o-layout--justify-center {
+    justify-content: center;
 }
 
 /*
@@ -338,10 +380,6 @@ select {
     width: 100%;
     height: 100%;
 }
-
-
-
-
 
 
 /*
@@ -355,256 +393,193 @@ select {
     padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
-.o-row--login {
-    min-height: 100vh;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-}
-
 /* size modifiers */
 
 .o-row--lg {
     padding-top: 48px;
-    padding-bottom: 48px;
-}
-
-@media (min-width: 768px) {
-    .o-row {
-        padding-left: var(--global-whitespace-lg);
-        padding-right: var(--global-whitespace-lg);
-    }
-}
-
-/*
-    Objects: Container
-    ---
-    Creates a horizontal container that sets de global max-width
-*/
-
-.o-container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 79.5em; /* 79.5 * 16px = 1272 */
-    width: 100%;
-    height: 100%;
-}
-
-/*
-    Objects: section
-    ---
-    Creates vertical whitespace between adjacent sections inside a row
-*/
-
-.o-section {
-    position: relative;
-}
-
-.o-section + .o-section {
-    padding-top: var(--global-whitespace);
-}
-
-@media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
-        padding-top: var(--global-whitespace-lg);
-    }
-}
-
-@media (min-width: 992px) {
-    .o-section--xl + .o-section--xl {
-        padding-top: var(--global-whitespace-xxl);
-    }
 }
 
 
-/*
-    Objects: Layout
-    ---
-    The layout object provides us with a column-style layout system. This object
-    contains the basic structural elements, but classes should be complemented
-    with width utilities
-*/
-.element{
-    display: block;
+/*========================== POKEMON OBJECT CREATED IN MAINPAGE.JS ========================*/
+
+.c-app-pokemon{
+    display: grid;
+    grid-template-columns:1fr 6.5rem 6.5rem 1fr ;
+    grid-template-rows: 1fr 9rem 7.5rem 5rem 1fr;
+    column-gap: var(--global-whitespace-md);
+    row-gap: var(--global-whitespace-md);
+    margin-bottom: var(--global-whitespace-lg);
 }
-.o-layout {
-    display: -webkit-flex;
-    display: -ms-flexbox;
+
+/*POKEMON IMAGE AND NAME*/
+
+.c-pokemon{
     display: flex;
-    flex-wrap: wrap;
+    grid-row:2;
+    grid-column-start: 3;
+    grid-column-start: span 4;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 
-.o-layout__item {
+.c-sprite-pokemon{
+    height: var(--global-baseline-x120);
+    width: var(--global-baseline-x120);
+}
+
+.c-pokemon-name{
+    font-size: var(--global-baseline-x15);
+    font-weight: bold;
+
+}
+
+/*STATS: BASE STATS POSITION*/
+
+.c-stats-1{
+    grid-row: 3;
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
     width: 100%;
+
+}
+
+.u-stats-fz{
+    font-size: var(--global-fz-sm-x);
+}
+
+.c-stats-2{
+    grid-row: 3;
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+/*STATS: POWER LEVEL: POSITION*/
+
+.c-powerlevel{
+    display: flex;
+    grid-row:4;
+    grid-column: 2 / span 2;
+    align-self: center;
+    flex-direction: column;
     
 }
 
-/* gutter modifiers, these affect o-layout__item too */
-
-.o-layout--gutter {
-    margin: 0 12px;
-    width:168px
+.c-powerlevel-text{
+    align-self: center;
+    justify-self: center;
+    margin-bottom: var(--global-whitespace-md);
+    font-size: 0.75rem;
 }
 
-.o-layout--gutter-lg {
-    margin: 0 16px;
-    width:168px
+.c-stat-bar-margin-bottom{
+    margin-bottom:var(--global-baseline-x15);
 }
 
-.o-layout--gutter-lg_landing {
-    margin: 0 40px;
-    width:480px;
+/*STATS: LAYOUT*/
+
+.progress_bar_color{
+    background-color:var(--global-color-neutral-xxxxx-light);
+    width: 100%;
+    height: var(--global-height-md);
 }
 
-
-.o-layout--gutter > .o-layout__item {
-    padding: 0 12px;
+.progress_bar_powerlevel{
+    background-color: var(--global-color-neutral-xxxxx-light);
+    width: 100%;
+    height: var(--global-height-lg);
 }
 
-.o-layout--gutter-sm {
-    margin: 0 -6px;
+.progress_bar_percentage_color{
+    background-color: var(--global-color-statbar);
+    height:var(--global-height-md);
 }
 
-.o-layout--gutter-sm > .o-layout__item {
-    padding: 0 6px;
+.bar_radius{
+    border-radius: var(--global-bar-radius);
+    width:100%
 }
 
-/* .o-layout--gutter-lg {
-    margin: 0 calc(var(--global-whitespace) * -1);
-} */
+.progress_bar_percentage_color_powerlevel{
 
-.o-layout--gutter-lg > .o-layout__item {
-    padding: 0 var(--global-whitespace);
+    background: var(--global-color-powerlevel);
+    height:var(--global-height-lg);
+
 }
 
-.o-layout--gutter-xl {
-    margin: 0 calc(var(--global-whitespace-lg) * -1);
+.bar_radius_powerlevel{
+    border-radius: var(--global-bar-radius-md);
+    width:100%
 }
 
-.o-layout--gutter-xl > .o-layout__item {
-    padding: 0 var(--global-whitespace-lg);
-}
+/*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
 
-/* reverse horizontal row modifier */
-
-.o-layout--row-reverse {
-    flex-direction: row-reverse;
-}
-
-/* Horizontal alignment modifiers*/
-
-.o-layout--justify-start {
-    justify-content: flex-start;
-}
-
-.o-layout--justify-end {
-    justify-content: flex-end;
-}
-
-.o-layout--justify-center {
-    justify-content: center;
-}
-
-.o-layout--justify-space-around {
-    justify-content: space-around;
-}
-
-.o-layout--justify-space-evenly {
-    justify-content: space-evenly;
-}
-
-.o-layout--justify-space-between {
-    justify-content: space-between;
-}
-
-/* Vertical alignment modifiers */
-
-.o-layout--align-start {
-    align-items: flex-start;
-}
-
-.o-layout--align-end {
-    align-items: flex-end;
-}
-
-.o-layout--align-center {
-    align-items: center;
-}
-
-.o-layout--align-baseline {
-    align-items: baseline;
-}
-
-/* Vertical alignment modifiers that only work if there is one than one flex item */
-
-.o-layout--align-content-start {
-    align-content: start;
-}
-
-.o-layout--align-content-end {
-    align-content: end;
-}
-
-.o-layout--align-content-center {
-    align-content: center;
-}
-
-.o-layout--align-content-space-around {
-    align-content: space-around;
-}
-
-.o-layout--align-content-space-between {
-    align-content: space-between;
-}
-
-/*
-    Objects: List
-    ---
-    Small reusable object to remove default list styling from lists
-*/
-
-.o-list {
-    list-style: none;
-    padding: 0;
-}
-
-/*
-    Object: Button reset
-    ---
-    Small button reset object
-*/
-
-.o-button-reset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
+/*POSITION NAVIGATION: FIXED*/
+.c-nav-button{
+    position: fixed;
     background: transparent;
+    border:0;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+    width:var(--global-width-lg-x);
+    height:var(--global-height-lg-x);
+    left:var(--global-baseline-x10);
+    top:var(--global-baseline-x10);   
 }
 
-/*
-    Object: Hide accessible
-    ---
-    Accessibly hide any element
-*/
+
+.c-nav-icon{
+    height:var(--global-height-lg);
+    width:var(--global-width-lg);
+}
+
+/*TITLE AND MOTTO*/
+.c-title-app{
+    font-size: var(--global-fz-md-x);
+    font-weight: Bold;
+}
+
+.c-motto-app{
+font-size: var(--global-fz-sm);
+text-align: center;
+}
+
+/*LAYOUT OVERLAY FILTER*/
+.overlay {
+    min-height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--global-color-background-overlay);
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 30;
+    text-align: center;
+  }
+  
+/*OVERLAY ITEMS*/
+
+.overlay-content {
+    position: relative;
+    top: var(--global-baseline-x30);
+    width: 100%;
+    text-align: center;
+  }
+
+.overlay .closebtn {
+    position: absolute;
+    background:transparent;
+    border:0;
+    right: 0;
+    width: var(--global-width-lg);
+    height: var(--global-height-lg);
+}
 
 .o-hide-accessible {
     position: absolute;
@@ -616,1460 +591,96 @@ select {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
-
-/*------------------------------------*\
-#COMPONENTS
-\*------------------------------------*/
-
-/*
-    Component: Logo
-    ---
-    Website main logo
-*/
-
-.c-logo {
-    height: var(--global-whitespace);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--global-whitespace-lg);
-}
-
-.c-logo__symbol {
-    height: 100%;
-}
-
-.c-logo__path--1 {
-    fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
-}
-
-.c-logo__path--2 {
-    fill: var(--logo__path--2--fill, var(--global-color-alpha));
-}
-
-.c-logo__path--3 {
-    fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-logo {
-        --logo__path--1--fill: White;
-        --logo__path--2--fill: var(--logo__path--1--fill);
-        --logo__path--3--fill: var(--logo__path--1--fill);
-    }
-}
-
-/*
-    Component: Card
-    ---
-    Card with box shadow
-*/
-
-.c-card {
-    --card-borderRadius: var(--global-borderRadius);
-    background-color: var(--card-backgroundColor, White);
-    margin-bottom: var(--global-whitespace);
-    border-radius: var(--card-borderRadius, var(--global-borderRadius));
-    box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
-    overflow: hidden;
-}
-
-/* Add padding to child for more flexibility */
-.c-card__body,
-.c-card__footer {
-    padding: var(--global-whitespace);
-}
-
-.c-card__footer {
-    text-align: center;
-    border-top: var(--global-borderWidth) solid var(--card__footer-borderColor, var(--global-color-neutral-xxx-light));
-}
-
-.c-card__title {
-    text-align: center;
-    font-size: 18px;
-    line-height: calc(var(--global-baseline) * 3);
-    font-weight: 600;
-}
-
-/* This allows c-card__body and __footer to have equal padding everywhere */
-
-.c-card__body > *:last-child,
-.c-card__footer > *:last-child,
-.c-card__body > *:last-child > *:last-child,
-.c-card__footer > *:last-child > *:last-child {
-    margin-bottom: 0;
-}
-
-@media (min-width: 27em) {
-    .c-card__body {
-        padding: var(--global-whitespace-xl);
-    }
-
-    .c-card__title {
-        margin-bottom: var(--global-whitespace-xl);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-card {
-        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
-        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
-    }
-}
-
-/*
-    Component: Forms
-    ---
-    Everything form related here
-*/
-
-.c-form-field {
-    position: relative;
-}
-
-.c-form-field--option {
-    display: flex;
-    align-items: center;
-}
-
-/*
-    Component: Input
-    ---
-    Class to put on all input="text" like form inputs
-*/
-
-.c-input {
-    --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    border-radius: var(--input-borderRadius, var(--global-borderRadius));
-    border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
-    background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
-    color: var(--global-input-color);
-    font-family: inherit;
-    font-size: 16px;
-    line-height: calc(var(--global-baseline) * 3);
-    padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
-    outline: none;
-    transition: var(--input-transition);
-}
-
-.c-input:hover {
-    border-color:  var(--global-input-hover-borderColor);
-}
-
-.c-input:focus,
-.c-input:active {
-    border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
-    box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
-}
-
-/*
-Input password with toggle checkbox on top of it needs
-more padding on the right to avoid overlap
-*/
-
-.c-input--password-with-toggle {
-    padding-right: 52px;
-}
-
-/* input password with floating label */
-/* 
-.c-input--with-floating-label:focus {
-    box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
-} */
-
-/* option input for checkboxes and radio buttons */
-
-.c-option {
-    margin-right: var(--global-whitespace-sm);
-}
-
-/*
-    Component: Label
-    ---
-    Class to put on all form labels
-*/
-
-.c-label {
-    margin-bottom: 0;
-    font-size: 14px;
-    padding-bottom: var(--global-whitespace-sm);    
-    line-height: calc(var(--global-baseline) * 2);
-    color: var(--label-color, var(--global-label-color));
-}
-
-
-
-.c-label--option {
-    padding-bottom: 0;
-}
-
-.c-label__error-message {
-    font-weight: 600;
-	float: right;
-	display: none;
-}
-
-.c-label__error-message.is-visible {
-	display: block;
-}
-
-.c-label--floating {
-    top: calc(var(--global-baseline) * 1.5);
-    left: var(--global-whitespace-sm);
-    padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
-    background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
-    transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    z-index: 1;
-    border-radius: var(--global-borderRadius);
-}
-
-.is-floating,
-.c-form-field:focus-within .c-label--floating {
-    transform: translateY(calc(var(--global-baseline) * -3))
-}
-
-@media (prefers-color-scheme: dark) {
-    /* .c-label--floating {
-        --label--floating-backgroundColor: transparent;
-    } */
-}
-
-/*
-    Component: Button
-    ---
-    Class to put on form buttons or
-*/
-
-
-@media (prefers-color-scheme: dark) {
-    .c-button {
-        --button-borderColor: var(--global-color-alpha);
-        --button-hover-borderColor: var(--global-color-alpha-light);
-        --button-active-borderColor: var(--global-color-alpha-dark);
-        --button-focus-borderColor: var(--global-color-alpha-x-dark);
-    }
-}
-
-/*
-    Component: Option list
-    ---
-
-*/
-
-.c-option-list {
-    margin-bottom: var(--global-whitespace-lg);
-}
-
-.c-option-list__item {
-    margin-bottom: calc(var(--global-baseline) * 1.5);
-}
-
-/*
-    Custom option
-    ---
-    Custom checkboxes & radio buttons
-*/
-
-/* Hide the actual input with the class .o-hide-accessible */
-
-.c-custom-option {
-    --custom-option-background: var(--global-input-backgroundColor);
-    --custom-option-borderRadius: var(--global-borderRadius);
-    --custom-option-borderColor: var(--global-input-borderColor);
-    --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
-    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
-    --custom-option-focus-boxShadowColor: var(--global-input-focus-boxShadowColor);
-    --custom-option-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--custom-option-focus-boxShadowColor);
-    --custom-option__symbol-fill: var(--global-color-alpha);
-    --custom-option-transition: var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    display: flex;
-    align-items: center;
-}
-
-.c-custom-option__fake-input {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-    background: var(--custom-option-background);
-    border: 1px solid var(--custom-option-borderColor);
-    transition: all var(--custom-option-transition);
-    box-shadow: var(--custom-option-boxShadow, 0);
-}
-
-.c-custom-option__fake-input--checkbox {
-    border-radius: var(--custom-option-borderRadius);
-}
-
-.c-custom-option__fake-input--radio {
-    border-radius: 100%;
-}
-
-.c-custom-option__symbol {
-    display: block;
-    opacity: 0; /* Hide the symbol initially */
-    transform: scale(.5);
-    transition: transform var(--custom-option-transition), opacity var(--custom-option-transition);
-}
-
-.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
-    width: 10px;
-    height: 10px;
-    fill: var(--custom-option__symbol-fill);
-}
-
-.c-custom-option__fake-input--radio .c-custom-option__symbol {
-    background-color: var(--custom-option__symbol-fill);
-    border-radius: 100%;
-    width: 6px;
-    height: 6px;
-}
-
-/* hover state */
-
-.c-custom-option:hover {
-    --custom-option-borderColor: var(--custom-option-hover-borderColor);
-}
-
-/* focused and active state */
-
-.c-option--hidden:focus + .c-custom-option,
-.c-option--hidden:active + .c-custom-option {
-    --custom-option-borderColor: var(--custom-option-focus-borderColor);
-    --custom-option-boxShadow: var(--custom-option-focus-boxShadow);
-}
-
-/* checked state */
-
-.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
-    opacity: 1; /* Show the symbol when the invisible checkbox/radio button is checked */
-    transform: scale(1);
-}
-
-/*
-    Component: Custom Toggle
-    ---
-    Visually change a checkbox into a toggle
-*/
-
-.c-custom-toggle-list {
-    --toggle-list-borderColor: var(--global-color-neutral-xxx-light);
-    margin-bottom: 24px;
-}
-
-.c-custom-toggle-list__item {
-    margin-bottom: 12px;
-}
-
-.c-custom-toggle-list__item + .c-custom-toggle-list__item {
-    padding-top: 12px;
-    border-top: 1px solid var(--toggle-list-borderColor);
-}
-
-.c-custom-toggle {
-    --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
-    --toggle-borderColor: var(--global-input-borderColor);
-    --toggle-focus-borderColor: var(--global-input-focus-borderColor);
-    --toggle-checked-borderColor: var(--global-color-alpha-dark);
-    --toggle-checked-backgroundColor: var(--global-color-alpha);
-    --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
-    --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    --toggle__switch-backgroundColor: White;
-    --toggle__switch-checked-backgroundColor: White;
-    --toggle__switch-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    display: flex;
-    align-items: center;
-}
-
-.c-custom-toggle--inverted {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.c-custom-toggle__fake-input {
-    display: block;
-    height: 24px;
-    width: 48px;
-    margin-right: 16px;
-    background-color: var(--toggle-backgroundColor);
-    border-radius: 32px;
-    border: 1px solid var(--toggle-borderColor);
-    transition: var(--toggle-transition);
-    box-shadow: var(--toggle-boxShadow, 0);
-}
-
-.c-custom-toggle--inverted .c-custom-toggle__fake-input {
-    margin-right: 0;
-}
-
-.c-custom-toggle__fake-input::after {
-    position: relative;
-    display: block;
-    content: '';
-    height: 22px;
-    width: 22px;
-    border-radius: 22px;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
-    background-color: var(--toggle__switch-backgroundColor);
-    transition: var(--toggle__switch-transition);
-}
-
-/* focused and active state */
-
-.c-option--hidden:focus + .c-custom-toggle,
-.c-option--hidden:active + .c-custom-toggle {
-    --toggle-borderColor: var(--toggle-focus-borderColor);
-    --toggle-boxShadow: var(--toggle-focus-boxShadow);
-}
-
-/* checked state */
-
-.c-option--hidden:checked + .c-custom-toggle {
-    --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
-    --toggle-borderColor: var(--toggle-checked-borderColor);
-    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);
-}
-
-.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    transform: translate(24px,0);
-}
-
-/* special active state */
-
-.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    width: 28px;
-}
-
-.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    margin-left: -6px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-custom-toggle-list {
-        --toggle-list-borderColor: var(--global-color-neutral-xx-dark);
-    }
-
-    .c-custom-toggle {
-        --toggle-backgroundColor: var(--global-input-backgroundColor);
-        --toggle-checked-borderColor: var(--toggle-checked-backgroundColor);
-        --toggle-focus-boxShadow: 0 0 0 1px var(--global-color-neutral-xxxx-dark), var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
-        --toggle__switch-backgroundColor: var(--global-color-neutral-dark);
-        --toggle__switch-checked-backgroundColor: White;
-    }
-}
-
-/*
-    Component: Custom Select
-    ---
-    Custom select dropdown
-*/
-
-
-.c-custom-select {
-    display: block;
-    position: relative;
-}
-
-.c-custom-select__symbol {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    pointer-events: none;
-    fill: var(--global-color-neutral-x-light);
-}
-
-/*
-    Component: Password Toggle
-    ---
-    Password toggle custom checkbox
-*/
-
-.c-password-toggle-container {
-    position: relative;
-    display: block;
-}
-
-.c-password-toggle {
-    --password-toggle__symbol-fill: var(--global-color-neutral-x-light);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-}
-
-.c-password-toggle__label {
-    display: flex;
-    align-items: center;
-    /* top: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute; */
-    /* padding: 0 16px; */
-    padding: 14px 16px;
-}
-
-.c-password-toggle__symbol {
-    display: block;
-    width: 20px;
-    height: 20px;
-    fill: var(--password-toggle__symbol-fill);
-}
-
-.c-password-toggle__symbol--hide {
-    display: none;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
-    display: block;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
-    display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-password-toggle {
-        --password-toggle__symbol-fill: var(--global-color-neutral-x-dark);
-    }
-}
-
-/* tent */
-
-.c-tent {
-    --tent__icon-size: calc(var(--global-baseline) * 10);
-    --tent-borderRadius: calc(var(--global-borderRadius) * 2);
-    --tent-transition: var(--global-transitionDuration-gamma) var(--global-transitionEasing-out-cubic);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: transform var(--tent-transition);
-    transform: var(--tent-transform, none);
-}
-
-/* shadows are made with before and after for performance */
-
-.c-tent::before,
-.c-tent::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: opacity var(--tent-transition);
-    pointer-events: none;
-    border-radius: var(--tent-borderRadius);
-}
-
-.c-tent::before {
-    box-shadow: 0 6px 12px -2px rgba(0,0,0,.125), 0 3px 7px -3px rgba(0,0,0,.2);
-    opacity: var(--tent__before-opacity, 1);
-}
-
-.c-tent::after {
-    box-shadow: 0 50px 100px -20px rgba(0,0,0,.25), 0 30px 60px -30px rgba(0,0,0,.3), 0 -18px 60px -10px rgba(0,0,0,.025);
-    opacity: var(--tent__after-opacity, 0);
-}
-
-.c-tent__body {
-    border-radius: var(--tent-borderRadius);
-    background-color: var(--tent-backgroundColor, white);
-    padding: var(--tent__body-whitespace, calc(var(--tent__icon-size) / 1.25));
-    position: relative;
-    overflow: hidden;
-}
-
-.c-tent__icon-wrapper {
-    width: var(--tent__icon-size);
-    height: var(--tent__icon-size);
-    border-radius: 100%;
-    background-color: var(--tent__icon-backgroundColor, white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: calc(var(--tent__icon-size) / -2);
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.07);
-    transition: transform var(--tent-transition);
-    transform: var(--tent__icon-wrapper-transform, none);
-}
-
-.c-tent__icon {
-    width: calc(var(--tent__icon-size) / 1.75);
-    height: calc(var(--tent__icon-size) / 1.75);
-}
-
-.c-tent__content {
-    color: var(--tent__content-color, var(--global-color-neutral));
-    transition: transform var(--tent-transition);
-    transform: var(--tent__content-transform, none);
-}
-
-.c-tent__content > *:last-child,
-.c-tent__content > *:last-child > *:last-child {
-    margin-bottom: 0;
-}
-
-.c-tent__title {
-    font-size: 19px;
-    font-weight: normal;
-    line-height: calc(var(--global-baseline) * 3);
-    margin-bottom: var(--global-whitespace-xs);
-    color: var(--tent__title-color, var(--global-page-color));
-}
-
-.c-tent__action {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-weight: 600;
-    padding: calc(var(--tent__icon-size) / 5) var(--global-whitespace);
-    /* color: var(--tent__action-color, var(--global-color-alpha)); */
-    background-color: var(--tent__action-backgroundColor, var(--global-color-neutral-xxxx-light));
-    transform: var(--tent__action-opacity, translateY(calc(var(--tent__icon-size) / 2)));
-    transition: all var(--tent-transition);
-    opacity: var(--tent__action-opacity, 0);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 14px;
-}
-
-.c-tent:hover {
-    --tent-transform: translateY(calc(var(--global-whitespace-xs) * -1));
-    --tent__icon-wrapper-transform: scale(.75);
-    --tent__content-transform: translateY(calc(var(--tent__icon-size) / -6));
-    --tent__action-transfrom: none;
-    --tent__action-opacity: 1;
-    --tent__before-opacity: 0;
-    --tent__after-opacity: 1;
-}
-
-.c-tent:active {
-    --tent-transform: none;
-}
-
-/*
-
-.c-tent:hover {
-    transform: translateY(calc(var(--global-whitespace-xs) * -1));
-}
-
-.c-tent:hover .c-tent__icon-wrapper {
-    transform: scale(.75);
-}
-
-.c-tent:hover .c-tent__content {
-    transform: translateY(calc(var(--tent__icon-size) / -6));
-}
-
-.c-tent:hover .c-tent__action {
-    transform: none;
-    opacity: 1;
-}
-
-
-.c-tent:hover::before {
-    opacity: 0;
-}
-
-.c-tent:hover::after {
-    opacity: 1;
-}
-
-.c-tent:active {
-    transform: none;
-}
-
-*/
-
-@media (prefers-color-scheme: dark) {
-    .c-tent {
-        --tent-backgroundColor: var(--global-color-neutral-xxx-dark);
-        --tent__content-color: var(--global-color-neutral-light);
-        --tent__icon-backgroundColor: var(--global-color-neutral-xxx-dark);
-        --tent__icon-backgroundColor: var(--global-color-alpha-light);
-        --tent__action-backgroundColor: var(--global-color-neutral-xx-dark);
-        /* --tent__action-color: white; */
-    }
-}
-
-/* icons */
-
-.c-icon__path--color-1 {
-    fill: var(--icon__path-color-1, var(--global-color-alpha-x-transparent));
-}
-
-.c-icon__path--color-2 {
-    fill: var(--icon__path-color-2, var(--global-color-alpha));
-}
-
-@media (prefers-color-scheme: dark) {
-    .c-icon {
-        --icon__path-color-1: var(--global-color-alpha-dark);
-        --icon__path-color-2: white;
-    }
-}
-
-/* Like button */
-
-.c-like__symbol {
-	position: relative;
-	width: 24px;
-	fill: var( --global-color-neutral-x-light );
-	transform: scale(1);
-	transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 2.275);
-	will-change: transform;
-}
-
-.c-like__input:checked + .c-like__label .c-like__symbol {
-	transform: scale(1.1);
-	fill: #D80027;
-}
-
-/*------------------------------------*\
-#States
-\*------------------------------------*/
-
-.has-error {
-    --label-color: var(--global-color-error);
-    --input-borderColor: var(--global-input-error-borderColor);
-    --input-hover-borderColor: var(--global-input-error-borderColor);
-    --input-focus-borderColor: var(--global-input-error-borderColor);
-    --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
-}
-
-/*------------------------------------*\
-#UTILITIES
-\*------------------------------------*/
-
-/*
-    Utilities: color
-    ---
-    Utility classes to put specific colors onto elements
-*/
-
-.u-color-neutral {
-    color: var(--global-color-neutral);
-}
-
-.u-color-neutral-dark {
-    color: var(--global-color-neutral-dark);
-}
-
-/*
-    Utilities: spacing
-    ---
-    Utility classes to put specific margins and paddings onto elements
-*/
-
-.u-pt-clear {
-    padding-top: 0 !important;
-}
-
-.u-mb-clear {
-    margin-bottom: 0 !important;
-}
-
-.u-mb-xs {
-    margin-bottom: 4px !important;
-}
-
-.u-mb-sm {
-    margin-bottom: 8px !important;
-}
-
-.u-mb-md {
-    margin-bottom: 16px !important;
-}
-
-.u-mb-lg {
-    margin-bottom: 32px !important;
-}
-
-.u-mb-xl {
-    margin-bottom: 48px !important;
-}
-
-/*
-    Utilities: max-width
-    ---
-    Utility classes to put specific max widths onto elements
-*/
-
-.u-max-width-xs {
-    max-width: 27em !important;
-}
-
-.u-max-width-sm {
-    max-width: 39em !important;
-}
-
-.u-max-width-md {
-    max-width: 50em !important;
-}
-
-.u-max-width-lg {
-    max-width: 63.5em !important;
-}
-
-.u-max-width-none {
-    max-width: none !important;
-}
-
-
-/*
-    Utilities: align
-    ---
-    Utility classes align text or components
-*/
-
-.u-align-text-center {
-    text-align: center;
-}
-
-.u-align-center {
-    margin: 0 auto;
-}
-
-/*
-    Utilities: text
-    Utility classes to create smaller or bigger test
-*/
-
-.u-text-sm {
-    font-size: 14px;
-}
-
-/*
-    Utility: Widths
-    ---
-    Utility classes to put specific widths onto elements
-    Will be mostly used on o-layout__item
-*/
-
-.u-width-auto {
-    width: auto !important;
-}
-
-.u-1-of-2 {
-    width: 50% !important;
-}
-
-.u-1-of-3 {
-    width: 33.3333333333% !important;
-}
-
-.u-2-of-3 {
-    width: 66.6666666667% !important;
-}
-
-.u-1-of-4 {
-    width: 25% !important;
-}
-
-.u-3-of-4 {
-    width: 75% !important;
-}
-
-.u-1-of-5 {
-    width: 20% !important;
-}
-
-.u-2-of-5 {
-    width: 40% !important;
-}
-
-.u-3-of-5 {
-    width: 60% !important;
-}
-
-.u-4-of-5 {
-    width: 80% !important;
-}
-
-.u-1-of-6 {
-    width: 16.6666666667% !important;
-}
-
-.u-5-of-6 {
-    width: 83.3333333333% !important;
-}
-
-@media (min-width: 576px) {
-    .u-1-of-2-bp1 {
-        width: 50% !important;
-    }
-    .u-1-of-3-bp1 {
-        width: 33.3333333333% !important;
-    }
-    .u-2-of-3-bp1 {
-        width: 66.6666666667% !important;
-    }
-    .u-1-of-4-bp1 {
-        width: 25% !important;
-    }
-    .u-3-of-4-bp1 {
-        width: 75% !important;
-    }
-    .u-1-of-5-bp1 {
-        width: 20% !important;
-    }
-    .u-2-of-5-bp1 {
-        width: 40% !important;
-    }
-    .u-3-of-5-bp1 {
-        width: 60% !important;
-    }
-    .u-4-of-5-bp1 {
-        width: 80% !important;
-    }
-    .u-1-of-6-bp1 {
-        width: 16.6666666667% !important;
-    }
-    .u-5-of-6-bp1 {
-        width: 83.3333333333% !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .u-1-of-2-bp2 {
-        width: 50% !important;
-    }
-    .u-1-of-3-bp2 {
-        width: 33.3333333333% !important;
-    }
-    .u-2-of-3-bp2 {
-        width: 66.6666666667% !important;
-    }
-    .u-1-of-4-bp2 {
-        width: 25% !important;
-    }
-    .u-3-of-4-bp2 {
-        width: 75% !important;
-    }
-    .u-1-of-5-bp2 {
-        width: 20% !important;
-    }
-    .u-2-of-5-bp2 {
-        width: 40% !important;
-    }
-    .u-3-of-5-bp2 {
-        width: 60% !important;
-    }
-    .u-4-of-5-bp2 {
-        width: 80% !important;
-    }
-    .u-1-of-6-bp2 {
-        width: 16.6666666667% !important;
-    }
-    .u-5-of-6-bp2 {
-        width: 83.3333333333% !important;
-    }
-}
-
-@media (min-width: 992px) {
-    .u-1-of-2-bp3 {
-        width: 50% !important;
-    }
-    .u-1-of-3-bp3 {
-        width: 33.3333333333% !important;
-    }
-    .u-2-of-3-bp3 {
-        width: 66.6666666667% !important;
-    }
-    .u-1-of-4-bp3 {
-        width: 25% !important;
-    }
-    .u-3-of-4-bp3 {
-        width: 75% !important;
-    }
-    .u-1-of-5-bp3 {
-        width: 20% !important;
-    }
-    .u-2-of-5-bp3 {
-        width: 40% !important;
-    }
-    .u-3-of-5-bp3 {
-        width: 60% !important;
-    }
-    .u-4-of-5-bp3 {
-        width: 80% !important;
-    }
-    .u-1-of-6-bp3 {
-        width: 16.6666666667% !important;
-    }
-    .u-5-of-6-bp3 {
-        width: 83.3333333333% !important;
-    }
-}
-
-@media (min-width: 1200px) {
-    .u-1-of-2-bp4 {
-        width: 50% !important;
-    }
-    .u-1-of-3-bp4 {
-        width: 33.3333333333% !important;
-    }
-    .u-2-of-3-bp4 {
-        width: 66.6666666667% !important;
-    }
-    .u-1-of-4-bp4 {
-        width: 25% !important;
-    }
-    .u-3-of-4-bp4 {
-        width: 75% !important;
-    }
-    .u-1-of-5-bp4 {
-        width: 20% !important;
-    }
-    .u-2-of-5-bp4 {
-        width: 40% !important;
-    }
-    .u-3-of-5-bp4 {
-        width: 60% !important;
-    }
-    .u-4-of-5-bp4 {
-        width: 80% !important;
-    }
-    .u-1-of-6-bp4 {
-        width: 16.6666666667% !important;
-    }
-    .u-5-of-6-bp4 {
-        width: 83.3333333333% !important;
-    }
-}
-
-/*------------------------------------*\
-#MEDIA
-\*------------------------------------*/
-
-/*
-    Media Queries
-    ---
-    EXAMPLE Media Queries for Responsive Design.
-    These examples override the primary ('mobile first') styles.
-    USE THEM INLINE!
-*/
-
-/* Extra small devices (portrait phones, less than 576px)
-No media query since this is the default in mobile first design
-*/
-
-/* Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
-*/
-
-/* Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
-*/
-
-/* Large devices (landscape tablets, desktops, 992px and up)
-@media (min-width: 992px) {}
-*/
-
-/* Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
-*/
-
-/*
-    Print styles.
-    ---
-    Inlined to avoid the additional HTTP request:
-    http://www.phpied.com/delay-loading-your-print-css/
-*/
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
-        http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-    /*
-    * Don't show links that are fragment identifiers,
-    * or use the `javascript:` pseudo protocol
-    */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    /*
-    * Printing Tables:
-    * http://css-discuss.incutio.com/wiki/Printing_Tables
-    */
-    thead {
-        display: table-header-group;
-    }
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
-
-
-.u-absolute{
-    position:absolute;
-    z-index: 10;
-    top:80px;
-    left:80px 
-}
-
-.u-absolute-icon{
-    position:absolute;
-    z-index: 20;
-    top:-48px;
-    left:-40px 
-
-}
-
-u.relative{
-    position:relative;
-}
-
-
-
-/*================================================================== MAINPAGE===================================================================================*/
-
-
-/*========================== POKEMON OBJECT CREATED IN MAINPAGE.JS ========================*/
-
-/*GRID*/
-
-.c-header{
-    display: grid;
-    grid-template-columns:80px 1fr ;
-    grid-template-rows: 1fr;
-    column-gap: 32px;
-    row-gap: 48px;
-    min-height: 100%;
-
-}
-
-.c-navigation{
-    grid-row: 1;
-    grid-column: 1;
-}
-
-.c-title-app{
-    grid-row: 1;
-    grid-column: 2;
-}
-
-.c-app-pokemon{
-    display: grid;
-    grid-template-columns:1fr 160px 400px 400px 1fr ;
-    grid-template-rows: 1fr 120px 80PX 1rf;
-    column-gap: 32px;
-    row-gap: 48px;
-    min-height: 100%;
-    margin-bottom: 160px;
-}
-
-/*POKEMON IMAGE AND NAME*/
-
-.c-pokemon{
-    display: flex;
-    grid-row:2;
-    grid-column: 2;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.c-sprite-pokemon{
-    height: 144px;
-    width: 144px;
-}
-
-.c-pokemon-name{
-    height: 0px;
-    font-size: 16px;
-    font-weight: bold;
-
-}
-
-/*STATS: BASE STATS POSITION*/
-
-.c-stats-1{
-    grid-row: 2;
-    grid-column: 3;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-
-}
-
-.c-stats-2{
-    grid-row: 2;
-    grid-column: 4;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-}
-
-/*STATS: POWER LEVEL: POSITION*/
-
-.c-powerlevel{
-    display: flex;
-    grid-row:3;
-    grid-column: 2 / span 3;
-    align-self: center;
-    flex-direction: column;
-    
-}
-
-.c-powerlevel-text{
-    align-self: center;
-    justify-self: center;
-    margin-bottom: 16px;
-}
-
-.c-stat-bar-margin-bottom{
-    margin-bottom:calc(var(--global-baseline)*1.5)
-}
-
-/*STATS: LAYOUT*/
-
-.progress_bar_color{
-    background-color: white;
-    width: 100%;
-    height: 24px;
-}
-
-.progress_bar_powerlevel{
-    background-color: white;
-    width: 100%;
-    height: 48px;
-}
-
-.progress_bar_percentage_color{
-    background-color: cyan;
-    height:24px;
-
-}
-
-.progress_bar_measurements{
-    height: 24px;
-}
-
-.bar_radius{
-    border-radius: var(--global-bar-radius);
-    width:100%
-}
-
-.progress_bar_percentage_color_powerlevel{
-
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-    height:48px;
-
-}
-
-.bar_radius_powerlevel{
-    border-radius: 48px;
-    width:100%
-}
-
-/*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
-
-/*POSITION NAVIGATION: FIXED*/
-.c-navigation{
-    position: fixed;
-    background: transparent;
-    height: 1px;
-    width:1px;
-    
-    
-}
-
-/*TITLE AND MOTTO*/
-.c-title-app{
-    font-size: 48px;
-    font-weight: Bold;
-}
-
-.c-motto-app{
-font-size: 24px;
-}
-
-/*LAYOUT OVERLAY FILTER*/
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-    z-index: 30;
-  }
   
-/*OVERLAY ITEMS*/
-
-.overlay-content {
-    position: relative;
-    top: 5%;
-    width: 100%;
-    text-align: center;
-    margin-top: 16px;
-  }
   
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 24px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-  
-.overlay label:hover{
-    color: #f1f1f1;
-    background-color: #0D2E68;
-  }
-
 .overlay .o-water:hover{
-    background-color: rgba(0,0,255, 0.7);
+    background-color:var(--global-color-type-water);
 }
 
 .overlay .o-fire:hover{
-      background-color: rgba(255,0,0, 0.7);
+      background-color: var(--global-color-type-fire);
   }
 
-  .overlay .o-grass:hover{
-    background-color: green;
+.overlay .o-grass:hover{
+    background-color: var(--global-color-type-grass);
 }
 
 .overlay .o-electric:hover{
-    background-color: yellow;
-    color:black;
+    background-color: var(--global-color-type-electric);
+    color:var(--global-color-neutral-xxxxx-dark);
 }
 
 .overlay .o-ground:hover{
-    background-color: #b5651D;
+    background-color: var(--global-color-type-ground);
 }
 
 .overlay .o-rock:hover{
-    background-color: #654321 ;
-    color:white;
+    background-color: var(--global-color-type-rock); ;
+    color:var(--global-color-neutral-xxxxx-light);
 }
 
 .overlay .o-steel:hover{
-    background-color: gray;
+    background-color: var(--global-color-type-steel);
 }
 
 .overlay .o-ice:hover{
-    background-color: cyan;
-    color:black;
+    background-color: var(--global-color-type-ice);
+    color:var(--global-color-neutral-xxxxx-dark);
 }
 
 .overlay .o-psychic:hover{
-    background-color: hotpink;
-    color:black;
+    background-color: var(--global-color-type-psychic);
+    color:var(--global-color-neutral-xxxxx-dark);
 }
 
 .overlay .o-poison:hover{
-    background-color: purple;
+    background-color: var(--global-color-type-poison);
 }
 
 .overlay .o-bug:hover{
-    background-color: #006400;
+    background-color: var(--global-color-type-bug);
 }
 
 .overlay .o-fairy:hover{
-    background-color: #FFB6C1;
-    color:black;
+    background-color:var(--global-color-type-fairy);
+    color:var(--global-color-neutral-xxxxx-dark);
 }
 
 .overlay .o-ghost:hover{
-    background-color: #301934;
+    background-color: var(--global-color-type-ghost);
 }
 
 .overlay .o-fighting:hover{
-    background-color: brown;
+    background-color: var(--global-color-type-fighting);
 }
 
 .overlay .o-normal:hover{
-    background-color: white;
-    color:black;
+    background-color: var(--global-color-type-normal);
+    color:var(--global-color-neutral-xxxxx-dark);
+}
+
+.c-close-icon{
+    stroke:var(--global-color-neutral-xxxxx-light);
 }
   
-  .overlay .closebtn {
-    position: absolute;
-    right: 45px;
-    font-size: 48px;
-    top:-8px;
-  }
-  
 
-  .c-type{
-      font-size: 24px;
-      margin-bottom: 12px;
-  }
+.c-type{
+    font-size: calc(var(--global-fz-sm)*3/4);
+    margin-bottom: var(--global-baseline-x10);
+}
+  
 
 
 /*============================= LOADER OBJECT AND ANIMATION ===========================*/
 
-  .loader {
-    border: 8px solid white; /* Light grey */
-    border-top: 8px solid cyan; /* Blue */
+  .c-loader {
+    border: var(--global-baseline-x10) solid var(--global-color-neutral-xxxxx-light); /* Light grey */
+    border-top: var(--global-baseline-x10) solid var(--global-color-statbar); /* Blue */
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: var(--global-height-lg-xx);
+    height: var(--global-width-lg-xx);
     animation: spin 2s linear infinite;
+    margin-bottom: var(--global-baseline-x50);
   }
   
   @keyframes spin {
@@ -2082,203 +693,461 @@ font-size: 24px;
   }
 
 
-  #hamburger-icon{
-      width: 80px;
-      height: 80px;
 
-  }
 
-/* =======================================================================LANDINGPAGE=========================================================================*/
-  
+/*==================================== MEDIAQUERIES ====================================*/
+@media(min-width:360px){
+    .c-app-pokemon{
+        display: grid;
+        grid-template-columns:1fr 7rem 7rem 1fr ;
+        grid-template-rows: 1fr 9rem 7.5rem 5rem 1fr;
+        column-gap: var(--global-baseline-x20);
+        row-gap: var(--global-baseline-x20);
+        margin-bottom: var(--global-baseline-x40);
+    }
+    
+    
+    .c-sprite-pokemon{
+        height: var(--global-baseline-x120);
+        width: var(--global-baseline-x120);
+    }
+    
+    .c-pokemon-name{
+        font-size: var(--global-fz-sm);
+    }
+    
+    /*STATS: BASE STATS POSITION*/
 
-/*================================== BACKGROUND PAGE ================================*/
-  .LandingPage_html_background{
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(13,46,104,1) 100%);
-    min-height: 100%;
+    
+    .u-stats-fz{
+        font-size: var(--global-fz-sm-x)
+    }
+    
+    
+    
+    /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
+    
+    /*POSITION NAVIGATION: FIXED*/
+    .c-nav-button{
+        width: var(--global-width-lg-xx);
+        height: var(--global-height-lg-xx);
+        left:var(--global-baseline-x15);
+        top:var(--global-baseline-x15);
+    }
+    
+    
+    .c-nav-icon{
+        height:var(--global-baseline-x40);
+        width:var(--global-baseline-x40);
+    }
+    
+    /*TITLE AND MOTTO*/
+    .c-title-app{
+        font-size: var(--global-fz-lg)
+    }
+    
+    .c-motto-app{
+    font-size: var(--global-fz-md)
+    }
 
-  }
+    .overlay-content {
+        top: var(--global-baseline-x50);
+      }
+
+
+    .overlay .closebtn {
+        position: absolute;
+        right: var(--global-baseline-x10);
+        top:var(--global-baseline-x10);
+        width: var(--global-baseline-x40);
+        height: var(--global-baseline-x40);
+      }
+
+    .c-close-icon{
+        height: var(--global-baseline-x20);
+        width: var(--global-baseline-x20);
+    }
+      
+    
+      .c-type{
+          font-size: var(--global-baseline-x15);
+          margin-bottom: var(--global-baseline-x10);
+      }
+    
+    
+    
+
+}
+
+@media(min-width:720px){
+    .c-app-pokemon{
+        display: grid;
+        grid-template-columns:1fr 12rem 12rem 1fr ;
+        grid-template-rows: 1fr 12rem 12rem 7rem 1fr;
+
+    }
+    
+    
+    .c-sprite-pokemon{
+        height: calc(var(--global-baseline-x100)*1.5);
+        width: calc(var(--global-baseline-x100)*1.5);
+    }
+    
+    .c-pokemon-name{
+        font-size: var(--global-fz-md);
+    }
+    
+    .u-stats-fz{
+        font-size: var(--global-fz-md)
+    }
+    
+    /*STATS: LAYOUT*/
+
+    .progress_bar_color{
+        height: var(--global-height-lg);
+    }
+
+    .progress_bar_powerlevel{
+        height: var(--global-height-lg-xx);
+    }
+
+    .progress_bar_percentage_color{
+        height:var(--global-height-lg);
+
+    }
+
+    .progress_bar_percentage_color_powerlevel{
+        height:var(--global-height-lg-xx);
+    }
+
+    .c-powerlevel-text{
+        margin-bottom: var(--global-whitespace-md);
+        font-size: var(--global-fz-md);
+    }
+
+    
+    
+    /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
+    
+    /*POSITION NAVIGATION: FIXED*/
+    .c-nav-button{
+        width: calc(var(--global-width-sm)*7);
+        height: calc(var(--global-hight-sm)*7)
+    }
+    
+    .c-nav-icon{
+        height:var(--global-heigth-lg-xxx);
+        width:var(--global-width-lg-xxx);
+    }
+    
+    /*TITLE AND MOTTO*/
+    .c-title-app{
+        font-size: calc(var(--global-fz-lg)*1.5);
+    }
+    
+    .c-motto-app{
+    font-size: var(--global-fz-lg);
+    }
+
+    .overlay-content {
+        position: relative;
+        top: var(--global-baseline-x60);
+        width: 100%;
+        text-align: center;
+      }
+
+
+    .overlay .closebtn {
+        position: absolute;
+        right: var(--global-baseline-x30);
+        top:var(--global-baseline-x10);
+        width: var(--global-width-lg-xx);
+        height: var(--global-height-lg-xx);
+      }
+
+    .c-close-icon{
+        height: var(--global-height-lg);
+        width: var(--global-width-lg);
+    }
+      
+    
+      .c-type{
+          font-size: var(--global-fz-md);
+          margin-bottom: var(--global-baseline-x10)
+    }
+
+    .c-loader {
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
+      }
+
+}
+
+@media(min-width:1024px){
+    .o-row--lg{
+        padding-bottom: var(--global-baseline-x60);
+    }
+
+    .o-container{
+        margin-bottom: var(--global-baseline-x80);
+
+    }    
+    
+    .c-app-pokemon{
+        display: grid;
+        grid-template-columns:1fr 10rem 15rem 15rem 1fr ;
+        grid-template-rows: 1fr 15rem 5rem 1fr;
+        margin-bottom: 7.5rem;
+    }
+    
+    /*POKEMON IMAGE AND NAME*/
+    
+    .c-pokemon{
+        display: flex;
+        grid-row:2;
+        grid-column-start: 2;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .c-sprite-pokemon{
+        height: calc(var(--global-height-lg-xx)*3);
+        width: calc(var(--global-height-lg-xx)*3);
+    }
+    
+    .c-pokemon-name{
+        font-size: var(--global-fz-md);
+    }
+    
+    /*STATS: BASE STATS POSITION*/
+    
+    .c-stats-1{
+        grid-row: 2;
+        grid-column: 3;
+    }
+    
+    .u-stats-fz{
+        font-size: var(--global-fz-md);
+    }
+
+    .c-stats-2{
+        grid-row: 2;
+        grid-column: 4;
+    }
+    
+    /*STATS: POWER LEVEL: POSITION*/
+    
+    .c-powerlevel{
+        grid-row:3;
+        grid-column: 2 / span 3;
+    }
+    
+    .c-powerlevel-text{
+        font-size: var(--global-fz-md);
+    }
+    
+    .c-stat-bar-margin-bottom{
+        margin-bottom:calc(var(--global-baseline-x10)*1.5);
+    }
+    
+    /*STATS: LAYOUT*/
+    
+    .progress_bar_color{
+        height: var(--global-height-lg);
+    }
+
+    .progress_bar_percentage_color{
+        height:var(--global-height-lg);
+    }
+    
+    .progress_bar_powerlevel{
+        height: var(--global-height-lg-xx);
+    }
+
+    .progress_bar_percentage_color_powerlevel{
+        height:var(--global-height-lg-xx);
+    }
+    
+
+    
+    /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
+    
+    /*POSITION NAVIGATION: FIXED*/
+    .c-nav-button{
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
+        left: var(--global-baseline-x20);  
+    }
+    
+    
+    .c-nav-icon{
+        height:calc(var(--global-height-lg-x)*2);
+        width:calc(var(--global-width-lg-x)*2);
+    }
+
+    
+    /*TITLE AND MOTTO*/
+    .c-title-app{
+        font-size: calc(var(--global-fz-sm)*3)
+    }
+    
+    .c-motto-app{
+    font-size: var(--global-fz-lg);
+    }
+
+      
+    /*OVERLAY ITEMS*/
+
+
+    .overlay-content {
+        top: calc(var(--global-baseline-x60)*1.5);
+      }
+      
+    
+      .c-type{
+          font-size: calc(var(--global-fz-sm)*1.5);
+          margin-bottom: var(--global-baseline-x20)
+      }
+
+      .overlay .closebtn {
+        position: absolute;
+        right: var(--global-baseline-x30);
+        top:var(--global-baseline-x15);
+        width: var(--global-width-lg-xx);
+        height: var(--global-height-lg-xx);
+      }
+
+    .c-close-icon{
+        height: var(--global-height-lg);
+        width: var(--global-width-lg);
+    }
+      
+    .c-loader {
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
+      }
+
+    
+
+}
+
+@media(min-width:1440px){
  
-/*================================ TITLE: POKEBALL SVG ==============================*/
+    
+    .c-app-pokemon{
+        display: grid;
+        grid-template-columns:1fr 15rem 22.5rem 22.5rem 1fr ;
+        grid-template-rows: 1fr 15rem 5rem 1fr;
+        column-gap: var(--global-baseline-x40);
+        row-gap: var(--global-baseline-x80);
 
-  .o-pokeball{
-      height:360px;
-      width:360px
-  }
+    }
+    
+    /*POKEMON IMAGE AND NAME*/
 
-/*==================================== TITLE: TEXT ==================================*/
+    
+    .c-sprite-pokemon{
+        height: calc(var(--global-height-lg-xx)*4);
+        width: calc(var(--global-width-lg-xx)*4);
+    }
+    
+    .c-pokemon-name{
+        font-size: calc(var(--global-fz-sm)*1.5)
+    }
+    
+    /*STATS: BASE STATS POSITION*/
+    
+    
+    .u-stats-fz{
+        font-size: calc(var(--global-fz-sm)*1.5)
+    }
+    
+    
+    /*STATS: POWER LEVEL: POSITION*/
+    
+    
+    .c-powerlevel-text{
 
-  .c-title-text{
-      font-size: 48px;
-      margin-bottom: 0;
-      margin-left:24px;
-      align-self: center;
-  }
+        margin-bottom: var(--global-baseline-x20);
+        font-size: calc(var(--global-fz-sm)*1.5)
+    }
+    
+    .c-stat-bar-margin-bottom{
+        margin-bottom:calc(var(--global-baseline-x10)*1.5)
+    }
+    
+    /*STATS: LAYOUT*/
+    
+    .progress_bar_color{
+        height: var(--global-height-lg-x);
+    }
+    
+    .progress_bar_percentage_color{
+        height:32px;
+    }
 
-  .c-title{
-      margin-bottom:64px
-  }
+    .progress_bar_powerlevel{
+        height: var(--global-height-lg-xxx);
+    }
+    
+    .progress_bar_percentage_color_powerlevel{
+        height:var(--global-height-lg-xxx);
+    
+    }
+    
 
-/*===================================== BODY: TEXT ===================================*/
-
-.c-white-text-lg{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold;
-    margin-bottom: 32px;
-
-}
-
-.c-cyan-text-sm{
-    font-size: 16px;
-    line-height: 24px;
-    color:#00D3FF;
-    margin-bottom: 32px;
-}
-
-.c-white-text-sm{
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: bold; ;
-    width:80%
-
-}
-
-/*================================== BODY: EMAIL INPUT===============================*/
-.c-form-field {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  
-.c-form-field--option {
-    display: flex;
-    align-items: center;
-  }
-  
-.c-form-field-option-center {
-    display: flex;
-    justify-content: center;
-  }
-
-.c-email{
-    width:100%
-}
-
-.o-layout-email-input{
-    width:480px;
-    height: 48px;;
-    margin-bottom: 16px;
-    border-radius: 10px;
-    border: 1px solid white;
-    padding: 20px; 
-    background-color: transparent;
-    text-align: center; 
-    font-weight: bold;
-    outline: none;
-}
-
-input{
-    color:white;
-}
-
-input::placeholder{
-    color:white;
-    opacity: 75%;
-
-}
-
-/* FLOATING LABEL*/
-
-.c-label-floating {
-    width: 95%;
-    position: absolute;
-    top: 8px;
-    padding: 4px 8px;
-    will-change: transform;
-    transform: translateY(0);
-    transition: transform 200ms ease-in-out;
-    background: transparent;
-  }
-
-.c-form-field:focus-within .c-label-floating,
-.c-label-floating.is-floating {
-  transform: translateY(-48px);
-}
-
-/* MAKES ERROR MESSAGE DISAPPEAR*/
-.u-none{
-    display:none;
-}
-
-/*================================ BODY: EMAIL BUTTON=================================*/
-
-.c-button {
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: var(--button-borderRadius, var(--global-borderRadius));
-    border: var(--button-borderWidth, var(--global-borderWidth)) solid var(--button-borderColor, var(--global-color-alpha-dark));
-    background-color: var(--button-backgroundColor, var(--global-color-alpha));
-    color: #fff;
-    padding: calc(var(--global-baseline) * 1.5 - var(--button-borderWidth, var(--global-borderWidth))) var(--global-whitespace-md);
-    line-height: calc(var(--global-baseline) * 3);
-    width: 100%;
-    outline: none;
-    box-shadow: var(--button-boxShadow, 0);
-    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-}
-
-.c-button:hover {
-    background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
-}
-
-.c-button:focus {
-    background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
-    border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
-    box-shadow: var(--global-input-focus-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
-}
-
-.c-button:active {
-    background-color: var(--button-active-backgroundColor, var(--global-color-alpha-dark));
-    border-color: var(--button-active-borderColor, var(--global-color-alpha-dark));
-    box-shadow: var(--button-active-boxShadow, 0);
-}
-
-.o-layout-button_email{
-    background-color: white; /* Green */
-    border: none;
-    color: black;
-    font-weight: bold;
-    padding:12px 48px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 25px;
-    margin:auto;
-    margin-left:auto;
-    margin-right: auto;
-    outline:none;
+    /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
+    
+    /*POSITION NAVIGATION: FIXED*/
+    .c-nav-button{
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
+        left:var(--global-baseline-x20) 
+    }
+    
+    
+    .c-nav-icon{
+        height:calc(var(--global-height-lg-x)*2);
+        width:calc(var(--global-width-lg-x)*2);
+    }
+    
+    /*TITLE AND MOTTO*/
+    .c-title-app{
+        font-size: calc(var(--global-fz-sm)*3)
+    }
+    
+    .c-motto-app{
+        font-size: var(--global-fz-lg)
+    }
+    
+      
 
 }
+
+/*#endregion Mainpage*/
+
+
+/*#region LandingPage */
+
 
 /*================================ LANDINGPAGE: GRID =================================*/
+
+
 .c-landingpage{
-      display:grid;
-      grid-template-columns: auto 480px 448px auto ;
-      grid-template-rows:auto 160px  280px 160px  auto;
-      height: 100vh;
-      column-gap: 240px;
-      row-gap: 40px;
-  }
+    display:grid;
+    grid-template-columns: auto 16rem auto;
+    grid-template-rows:1fr 4rem 10rem 6rem 25rem 1fr;
+    row-gap: var(--global-baseline-x40)
+}
+
 
 .o-smartphone{
-      grid-column-start:3;
-      grid-column-end:4;
-      grid-row-start: 3;
-      grid-row-end: 3;
+      grid-column:2;
+      grid-row:5;
 
-      height: 800px;
-      width:480px;
+      height: 25rem;
       justify-self: center;
   }
 
@@ -2309,877 +1178,520 @@ input::placeholder{
     align-self: center;
 }
 
+/*================================== BACKGROUND PAGE ================================*/
+.LandingPage_html_background{
+    background: var(--global-page-backgroundColorLandingpage);
+  }
+ 
+/*================================ TITLE: POKEBALL SVG ==============================*/
+
+  .c-pokeball{
+      height:var(--global-height-lg-xx);
+      width:var(--global-width-lg-xx);
+  }
+
+/*==================================== TITLE: TEXT ==================================*/
+
+  .c-title-text{
+      font-size: var(--global-fz-lg);
+      margin-bottom: 0;
+      margin-left:var(--global-baseline-x10);
+      align-self: center;
+  }
+
+  .c-title{
+      margin-bottom:var(--global-whitespace-md)
+  }
+
+/*===================================== BODY: TEXT ===================================*/
+
+.c-text-mb{
+    margin-bottom:var(--global-whitespace-md);
+}
+
+.c-white-text-lg{
+    font-size: var(--global-fz-sm);
+    line-height: var(--global-baseline-x30);
+    font-weight: bold;
+}
+
+.c-cyan-text-sm{
+    font-size: calc(var(--global-fz-sm-xx)*1.2);
+    line-height: var(--global-baseline-x20);
+    color:var(--global-color-blueText);
+}
+
+.c-white-text-sm{
+    font-size: calc(var(--global-fz-sm-xx)*1.2);
+    line-height:  var(--global-baseline-x20);
+    font-weight: bold; ;
+
+}
+
+.u-center-text{
+    text-align: center;
+}
+
+
+/*================================== BODY: EMAIL INPUT===============================*/
+.c-form-field {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+  }
+  
+.c-form-field-option-center {
+    display: flex;
+    justify-content: center;
+  }
+
+
+.c-label-email{
+    font-size: calc(var(--global-fz-sm-xx)*1.3);
+}
+
+.o-layout-email-input{
+    width:100%;
+    height: var(--global-baseline-x10);
+    margin-bottom: var(--global-whitespace-md);
+    border-radius: calc(var(--global-borderRadius-email)/1.5);
+    border: var(--global-border);
+    padding: var(--global-whitespace-md); 
+    background-color: transparent;
+    text-align: center; 
+    font-weight: bold;
+    outline: none;
+}
+
+
+
+/*------------------------------------*\
+#States
+\*------------------------------------*/
+
+.has-error {
+    --label-color: var(--global-color-error);
+    --input-borderColor: var(--global-input-error-borderColor);
+    --input-hover-borderColor: var(--global-input-error-borderColor);
+    --input-focus-borderColor: var(--global-input-error-borderColor);
+    --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+}
+
+
+
+.c-input{
+    color:var(--global-color-neutral-xxxxx-light);
+    font-size: 0.65rem;
+    width: 16rem;
+}
+
+input::placeholder{
+    color:var(--global-color-neutral-xxxxx-light);
+    opacity: 75%;
+
+}
+
+/* FLOATING LABEL*/
+
+.c-label-floating {
+    position: absolute;
+    top:calc(var(--global-whitespace-sm)/4*3);
+    padding: var(--global-whitespace-xs) var(--global-whitespace-sm);
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 200ms ease-in-out;
+    background: transparent;
+  }
+
+.c-form-field:focus-within .c-label-floating,
+.c-label-floating.is-floating {
+  transform: translateY(-2rem);
+}
+
+/* MAKES ERROR MESSAGE DISAPPEAR*/
+.u-none{
+    display:none;
+}
+
+/*================================ BODY: EMAIL BUTTON=================================*/
+
+.c-button {
+    font-size: calc(var(--global-baseline-x10)*1.3);
+    font-weight: 600;
+    border-radius: var(--global-borderRadius-button);
+    border: none;
+    background-color: var(--global-color-neutral-xxxxx-light);
+    color: var(--global-color-neutral-xxxxx-dark);
+    padding:calc(var(--global-whitespace-sm)/2) var(--global-whitespace);
+    line-height: calc(var(--global-baseline-x10) * 3);
+    width: 100%;
+    outline: none;
+    box-shadow: var(--button-boxShadow, 0);
+    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+}
+
+.c-button:hover {
+    background-color: var(--global-color-alpha-light)
+}
+
+.c-button:focus {
+    background-color: var(--global-color-alpha-dark);
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
+    color:var(--global-color-neutral-xxxxx-light);
+}
+
+.c-button:active {
+    background-color: var(--global-color-alpha-dark);
+
+}
+
+.o-layout-button_email{
+    text-align: center;
+    text-decoration: none;
+    margin:auto;
+
+}
+
+
+
 /*============================================================ MEDIA QUERIES VOOR LANDING PAGE ==================================================================*/
 
-@media(max-width:1130px){
-    .o-smartphone{
-        width:70%;
-        height:100%
-    }
+@media(min-width:420px){
+
+     /*============================== LANDINGPAGE: GRID ===============================*/
 
     .c-landingpage{
-        display: grid;
-        grid-template-columns: 1fr 488px 1fr;
-        grid-template-rows:auto 160px  280px 160px  auto;
+        display:grid;
+        grid-template-columns: auto 24rem auto;
+        grid-template-rows:1fr 5rem 16rem 8rem 35rem 1fr;
+        row-gap: var(--global-baseline-x60);
     }
 
-    .o-smartphone{
-        
-        grid-column-start:2;
-        grid-column-end:2;
-        grid-row-start: 5;
-        grid-row-end: 5;
-  
-        height: 720px;
-        width:400px;
-        justify-self: center;
-
-    }
-
-    .c-title-text{
-        margin-bottom:40px;
-        font-size: 36px;
-        align-self: center;
-        margin-bottom:0;
-        
-    }
-
+    /*==================================== POKEBALL ===================================*/
     .c-pokeball{
-        height: 120px;
-        width: 120px;
+        height:calc(var(--global-height-lg-x)*2);
+        width:calc(var(--global-width-lg-x)*2)
+    }
+  
+  /*==================================== TITLE: TEXT ==================================*/
+  
+    .c-title-text{
+        font-size: calc(var(--global-fz-md)*2);
+        margin-left:var(--global-baseline-x15);
+
     }
 
+  /*===================================== BODY: TEXT ===================================*/
+  
+  .c-text-mb{
+      margin-bottom:var(--global-baseline-x30)
+  }
+  
+  .c-white-text-lg{
+      font-size: calc(var(--global-fz-md)*1.25);
+      line-height: var(--global-baseline-x40);
+  }
+  
+  .c-cyan-text-sm{
+      font-size: var(--global-fz-md);
+      line-height: var(--global-baseline-x30);
+  }
+  
+  .c-white-text-sm{
+      font-size: var(--global-fz-md);
+      line-height: var(--global-baseline-x30);
+  }
+
+  
+  /*================================== BODY: EMAIL INPUT===============================*/
+    
+  .c-label-email{
+      font-size: var(--global-fz-md);
+  }
+  
+  .o-layout-email-input{
+      width:24rem;
+      height: var(--global-height-lg-xxx);
+      margin-bottom: calc(var(--global-whitespace-md)*1.5);
+      padding: var(--global-whitespace-md); 
+      border-radius: calc(var(--global-borderRadius-email));
+  }
+
+  .c-input{
+    font-size: var(--global-fz-md);
+    width: 24rem;
+}
+  
+  
+  /* FLOATING LABEL*/
+  .c-label-floating {
+    top:calc(var(--global-whitespace-sm));
+
+  }
+  .c-form-field:focus-within .c-label-floating,
+  .c-label-floating.is-floating {
+    transform: translateY(-3rem);
+  }
+  
+  
+  /*================================ BODY: EMAIL BUTTON=================================*/
+  
+  .c-button {
+      font-size: var(--global-fz-md);
+  }
+
+
+  .o-layout-button_email{
+      padding:calc(var(--global-whitespace-sm)*1.5) calc(var(--global-whitespace)*1.5);
+  }
+  
+ 
+  .o-smartphone{
+        height: 35rem;
+    }
 }
 
-@media(max-width:640px){
-    .o-smartphone{
-        width:50%;
-        height:75%
-    }
+@media(min-width:920px){
 
     .c-landingpage{
-        display: grid;
-        grid-template-columns: 1fr 360px 1fr;
-        grid-template-rows:auto 120px  200px 120px  auto;
-    }
-
-    .o-smartphone{
-        
-        grid-column-start:2;
-        grid-column-end:2;
-        grid-row-start: 5;
-        grid-row-end: 5;
-  
-        height: 480px;
-        width:300px;
-        justify-self: center;
-
-    }
-
-    html {
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .c-white-text-lg{
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: bold;
-    
-    }
-
-    .c-cyan-text-sm{
-        font-size: 12px;
-        line-height: 16px;
-        color:#00D3FF;
-    }
-
-    .c-white-text-sm{
-        font-size: 12px;
-        line-height: 16px;
-        font-weight: bold; ;
-        width:80%
-    
-    }
-
-    .o-layout-email-input{
-        height: 40px;;
-        margin-bottom: 16px;
-        border-radius: 10px;
-        border: 1px solid white;
-        padding: 12px; 
-        width: 100%;
-        font-size: 16px;
-
-    }
-
-    .o-layout-button_email{
-        padding:8px 36px;
-        font-size: 12px;
-        display: block;
-        height: 40px;
+        display:grid;
+        grid-template-columns: auto 48rem auto;
+        grid-template-rows:1fr 9rem 24rem 12rem 64rem 1fr;
+        row-gap: var(--global-baseline-x120);
     }
 
 
-
-    .c-title-text{
-        margin-bottom:40px;
-        font-size: 36px;
-        align-self: center;
-        margin-bottom:0;
-        
-    }
 
     .c-pokeball{
-        height: 80px;
-        width: 80px;
+        height:var(--global-baseline-x120);
+        width:var(--global-baseline-x120);
     }
-    
-
-}
-
-@media(max-width:420px){
-
-
-    .c-landingpage{
-        display: grid;
-        grid-template-columns: 1fr 320px 1fr;
-        grid-template-rows:1fr 80px  240px 120px  1fr;
-        row-gap: 16px;
-    }
-
-    .o-smartphone{
-        
-        grid-column-start:2;
-        grid-column-end:2;
-        grid-row-start: 5;
-        grid-row-end: 5;
   
-        height: 400px;
-        width:280px;
-        justify-self: center;
-        
-
-    }
-
-    html {
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .c-white-text-lg{
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: bold;
-    
-    }
-
-    .c-cyan-text-sm{
-        font-size: 12px;
-        line-height: 16px;
-        color:#00D3FF;
-    }
-
-    .c-white-text-sm{
-        font-size: 12px;
-        line-height: 16px;
-        font-weight: bold; ;
-        width:80%
-    
-    }
-
-    .o-layout-email-input{
-        height: 24px;;
-        margin-bottom: 16px;
-        border-radius: 10px;
-        border: 1px solid white;
-        padding: 12px;
-        width: 100%; 
-
-    }
+  /*==================================== TITLE: TEXT ==================================*/
+  
     .c-title-text{
-        margin-bottom:40px;
-        font-size: 24px;
+        font-size: var(--global-baseline-x60);
+
+        margin-left:var(--global-baseline-x30);
         align-self: center;
-        margin-bottom:0;
-        
     }
 
+  /*===================================== BODY: TEXT ===================================*/
+  
+  .c-text-mb{
+      margin-bottom:var(--global-whitespace-xl);
+  }
+  
+  .c-white-text-lg{
+      font-size: calc(var(--global-fz-md)*2);
+      line-height: var(--global-baseline-x60);
+  }
+  
+  .c-cyan-text-sm{
+      font-size: var(--global-fz-lg);
+      line-height: calc(var(--global-baseline-x15)*3);
+  }
+  
+  .c-white-text-sm{
+      font-size: var(--global-fz-lg);
+      line-height: calc(var(--global-baseline-x15)*3);
+  }
+
+  
+  /*================================== BODY: EMAIL INPUT===============================*/
+    
+  .c-label-email{
+      font-size: 1.5rem;
+  }
+  
+  .o-layout-email-input{
+    width:48rem;
+    height: 4.5rem;
+    margin-bottom: var(--global-whitespace-xl);
+    border-radius: calc(var(--global-borderRadius-email)*1.2);
+    border: var(--global-border);
+    padding: var(--global-whitespace-md); 
+    background-color: transparent;
+    text-align: center; 
+    font-weight: bold;
+    outline: none;
+  }
+
+  .c-input{
+    font-size: var(--global-fz-lg);
+    width: 48rem;
+}
+  
+  
+  /* FLOATING LABEL*/
+  
+  .c-label-floating {
+      position: absolute;
+      top:var(--global-baseline-x20);
+      padding: var(--global-whitespace-xs) var(--global-whitespace-md);
+    }
+  
+  .c-form-field:focus-within .c-label-floating,
+  .c-label-floating.is-floating {
+    transform: translateY(-4.5rem);
+  }
+  
+  
+  /*================================ BODY: EMAIL BUTTON=================================*/
+  
+  .c-button {
+    font-size: var(--global-fz-lg);
+  }
+
+
+  .o-layout-button_email{
+      padding: calc(var(--global-whitespace-sm)*3) var(--global-whitespace-xl);
+      border-radius: 3rem;
+  }
+  
+  .o-smartphone{
+    height: 64rem;
+}
+  
+
+}
+
+@media(min-width:1480px){
+
+     /*================================ LANDINGPAGE: GRID =================================*/
+  
+  
+  .c-landingpage{
+      display:grid;
+      grid-template-columns: auto 40rem 40rem auto;
+      grid-template-rows:1fr 10rem 16rem 10rem 1fr;
+      row-gap: 3rem;
+      column-gap:6rem;
+      min-height: 100vh;
+  }
+  
+  
+  .o-smartphone{
+        height: 45rem;
+        grid-column:3;
+        grid-row-start: 2;
+        grid-row-end:3;
+        align-self: auto;
+    }
+  
+  .c-title-icon-text{
+      grid-column-start:2;
+      grid-column-end:3;
+      grid-row-start: 2;
+      grid-row-end:2;
+      justify-content: center;
+      align-self: center;
+      margin:0
+  
+  }
+  
+  .c-text{
+      grid-column-start:2;
+      grid-column-end:3;
+      grid-row-start: 3;
+      grid-row-end:3;
+  }
+  
+  .c-email{
+      grid-column-start:2;
+      grid-column-end:3;
+      grid-row-start: 4;
+      grid-row-end:4;
+  
+      align-self: center;
+  } 
     .c-pokeball{
-        height: 64px;
-        width: 64px;
+        height:var(--global-baseline-x120);
+        width:var(--global-baseline-x120);
     }
-
-    .o-layout-button_email{
-        padding:6px 24px;
-        font-size: 12px;
-    }
-
+  
+  /*==================================== TITLE: TEXT ==================================*/
+  
     .c-title-text{
-        margin-left:8px; ;
+        font-size: calc(var(--global-fz-md)*3);
+
+        margin-left:calc(var(--global-whitespace-sm)*3);
+        align-self: center;
     }
+
+  /*===================================== BODY: TEXT ===================================*/
+  
+  .c-text-mb{
+      margin-bottom:var(--global-whitespace-lg);
+  }
+  
+  .c-white-text-lg{
+      font-size: var(--global-fz-lg);
+      line-height: calc(var(--global-baseline-x15)*3)
+  }
+  
+  .c-cyan-text-sm{
+      font-size: var(--global-fz-md);
+      line-height: var(--global-baseline-x30);
+  }
+  
+  .c-white-text-sm{
+      font-size: var(--global-fz-md);
+      line-height: var(--global-baseline-x30);
+  }
+
+  
+  /*================================== BODY: EMAIL INPUT===============================*/
     
-
-    .o-layout-email-input{
-        height: 36px;;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        border: 1px solid white;
-        padding: 12px; 
-        width: 100%;
-        font-size: 16px;
-
+  .c-label-email{
+      font-size: var(--global-fz-md);
+  }
+  
+  .o-layout-email-input{
+      width:40rem;
+      height: var(--global-baseline-x60);
+      margin-bottom: var(--global-whitespace-lg);
+      padding: var(--global-whitespace-md); 
+  }
+  
+  
+  /* FLOATING LABEL*/
+  
+  .c-label-floating {
+      top:calc(var(--global-baseline-x10)/4*3.5);
+      padding: var(--global-whitespace-xs) var(--global-whitespace-md);
     }
+  
+  .c-form-field:focus-within .c-label-floating,
+  .c-label-floating.is-floating {
+    transform: translateY(-48px);
+  }
+  
+  
+  /*================================ BODY: EMAIL BUTTON=================================*/
+  
+  .c-button {
+      font-size: 1rem;
+  }
 
+
+  .o-layout-button_email{
+      padding:var(--global-whitespace-md) var(--global-whitespace-lg);
+      border-radius: 3rem;
+  }
+  
+ 
 }
 
+/*#endregion Landingpage */
 
-/*============================================================== MEDIA QUERIES VOOR APP PAGE ====================================================================*/
-
-@media (max-width:1400px){
-    .o-row--lg {
-        padding:32px
-    }
-
-    .c-title-app{
-        font-size: 32px;
-        font-weight: Bold;
-    }
-    
-    .c-motto-app{
-    font-size: 16px;
-    }
-
-    #hamburger-icon{
-        width: 60px;
-        height: 60px;
-
-    }
-
-    .c-app-pokemon{
-        display: grid;
-        grid-template-columns:1fr 100px 260px 260px 1fr ;
-        grid-template-rows: 1fr 120px 80PX 1rf;
-        column-gap: 24px;
-        row-gap: 32px;
-        min-height: 100%;
-        margin-bottom: 120px;
-    }
-
-    .c-sprite-pokemon{
-        height: 96px;
-        width: 96px;
-    }
-    
-    .c-pokemon-name{
-        height: 0px;
-        font-size: 12px;
-        font-weight: bold;
-    
-    }
-
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline)*1.5)
-    }
-
-    .progress_bar_color{
-        background-color: white;
-        width: 100%;
-        height: 24px;
-    }
-
-    
-    .bar_radius{
-        border-radius: var(--global-bar-radius);
-        width:100%
-    }
-
-    .progress_bar_percentage_color{
-        background-color: cyan;
-        height:24px;
-    
-    }
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-    .c-powerlevel-text{
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 16px;
-    }
-
-    .progress_bar_powerlevel{
-        background-color: white;
-        width: 100%;
-        height: 48px;
-    }
-    
-    .bar_radius_powerlevel{
-        border-radius: 32px;
-        width:100%
-    }
-
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-}
-
-
-@media (max-width:960px){
-    .o-row--lg {
-        padding:24px
-    }
-
-    .c-title-app{
-        font-size: 32px;
-        font-weight: Bold;
-    }
-    
-    .c-motto-app{
-    font-size: 16px;
-    }
-
-    #hamburger-icon{
-        width: 60px;
-        height: 60px;
-    }
-
-    .c-app-pokemon{
-        display: grid;
-        grid-template-columns:1fr 280px 280px 1fr ;
-        grid-template-rows: 1fr 120px 240px 80PX 1fr;
-        column-gap: 24px;
-        row-gap: 36px;
-        min-height: 100%;
-        margin-bottom: 120px;
-    }
-
-    .c-stats-1{
-        grid-row: 3;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    
-    }
-    
-    .c-stats-2{
-        grid-row: 3;
-        grid-column: 3;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    }
-
-    .c-pokemon{
-        display: flex;
-        grid-row:2;
-        grid-column: 2 / span 2;
-        margin: 0;
-
-    
-    }
-    
-    .c-powerlevel{
-        display: flex;
-        grid-row:4;
-        grid-column: 2 / span 2;
-        align-self: center;
-        flex-direction: column;
-        
-    }
-
-    .c-sprite-pokemon{
-        height: 120px;
-        width: 120px;
-    }
-    
-    .c-pokemon-name{
-        height: 0px;
-        font-size: 16px;
-        font-weight: bold;
-    
-    }
-
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline)*1.5)
-    }
-
-    .progress_bar_color{
-        background-color: white;
-        width: 100%;
-        height: 24px;
-    }
-
-    
-    .bar_radius{
-        border-radius: var(--global-bar-radius);
-        width:100%
-    }
-
-    .progress_bar_percentage_color{
-        background-color: cyan;
-        height:24px;
-    
-    }
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-    .c-powerlevel-text{
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 16px;
-    }
-
-    .progress_bar_powerlevel{
-        background-color: white;
-        width: 100%;
-        height: 48px;
-    }
-    
-    .bar_radius_powerlevel{
-        border-radius: 32px;
-        width:100%
-    }
-
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-}
-
-
-@media (max-width:720px){
-    .o-row--lg {
-        padding:24px
-    }
-
-    .c-title-app{
-        font-size: 24px;
-        font-weight: Bold;
-    }
-    
-    .c-motto-app{
-    font-size: 12px;
-    }
-
-    #hamburger-icon{
-        width: 40px;
-        height: 40px;
-    }
-
-    .u-absolute-icon{
-        position:absolute;
-        z-index: 20;
-        top:-20px;
-        left: -24px;
-
-    
-    }
-
-    .c-app-pokemon{
-        display: grid;
-        grid-template-columns:1fr 180px 180px 1fr ;
-        grid-template-rows: 1fr 120px 240px 80PX 1fr;
-        column-gap: 24px;
-        row-gap: 36px;
-        min-height: 100%;
-        margin-bottom: 120px;
-    }
-
-    .c-stats-1{
-        grid-row: 3;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    
-    }
-    
-    .c-stats-2{
-        grid-row: 3;
-        grid-column: 3;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    }
-
-    .c-pokemon{
-        display: flex;
-        grid-row:2;
-        grid-column: 2 / span 2;
-        margin: 0;
-
-    
-    }
-    
-    .c-powerlevel{
-        display: flex;
-        grid-row:4;
-        grid-column: 2 / span 2;
-        align-self: center;
-        flex-direction: column;
-        
-    }
-
-    .c-sprite-pokemon{
-        height: 120px;
-        width: 120px;
-    }
-    
-    .c-pokemon-name{
-        height: 0px;
-        font-size: 16px;
-        font-weight: bold;
-    
-    }
-
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline)*1.5)
-    }
-
-    .progress_bar_color{
-        background-color: white;
-        width: 100%;
-        height: 24px;
-    }
-
-    
-    .bar_radius{
-        border-radius: var(--global-bar-radius);
-        width:100%
-    }
-
-    .progress_bar_percentage_color{
-        background-color: cyan;
-        height:24px;
-    
-    }
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-    .c-powerlevel-text{
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 16px;
-    }
-
-    .progress_bar_powerlevel{
-        background-color: white;
-        width: 100%;
-        height: 48px;
-    }
-    
-    .bar_radius_powerlevel{
-        border-radius: 32px;
-        width:100%
-    }
-
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-}
-
-
-@media (max-width:480px){
-
-    .o-row--lg {
-        padding:24px
-    }
-
-    .c-title-app{
-        font-size: 24px;
-        font-weight: Bold;
-    }
-    
-    .c-motto-app{
-    font-size: 12px;
-    }
-
-    #hamburger-icon{
-        width: 40px;
-        height: 40px;
-        left:-64px;
-        top:-56px
-    }
-
-    .c-app-pokemon{
-        display: grid;
-        grid-template-columns:1fr 140px 140px 1fr ;
-        grid-template-rows: 1fr 120px 240px 80PX 1fr;
-        column-gap: 24px;
-        row-gap: 36px;
-        min-height: 100%;
-        margin-bottom: 120px;
-    }
-
-    .c-stats-1{
-        grid-row: 3;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    
-    }
-    
-    .c-stats-2{
-        grid-row: 3;
-        grid-column: 3;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    }
-
-    .c-pokemon{
-        display: flex;
-        grid-row:2;
-        grid-column: 2 / span 2;
-        margin: 0;
-
-    
-    }
-    
-    .c-powerlevel{
-        display: flex;
-        grid-row:4;
-        grid-column: 2 / span 2;
-        align-self: center;
-        flex-direction: column;
-        
-    }
-
-    .c-sprite-pokemon{
-        height: 120px;
-        width: 120px;
-    }
-    
-    .c-pokemon-name{
-        height: 0px;
-        font-size: 16px;
-        font-weight: bold;
-    
-    }
-
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline)*1.5)
-    }
-
-    .progress_bar_color{
-        background-color: white;
-        width: 100%;
-        height: 24px;
-    }
-
-    
-    .bar_radius{
-        border-radius: var(--global-bar-radius);
-        width:100%
-    }
-
-    .progress_bar_percentage_color{
-        background-color: cyan;
-        height:24px;
-    
-    }
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-    .c-powerlevel-text{
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 16px;
-    }
-
-    .progress_bar_powerlevel{
-        background-color: white;
-        width: 100%;
-        height: 48px;
-    }
-    
-    .bar_radius_powerlevel{
-        border-radius: 32px;
-        width:100%
-    }
-
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    
-    }
-
-}
-
-
-@media(max-width:320px){
-
-    .o-row--lg {
-        padding:24px
-    }
-
-    .c-title-app{
-        font-size: 24px;
-        font-weight: Bold;
-    }
-    
-    .c-motto-app{
-    font-size: 12px;
-    }
-
-    #hamburger-icon{
-        width: 32px;
-        height: 32px;
-
-    }
-
-    .c-app-pokemon{
-        display: grid;
-        grid-template-columns:1fr 140px 140px 1fr ;
-        grid-template-rows: 1fr 80px 240px 80PX 1fr;
-        column-gap: 24px;
-        row-gap: 36px;
-        min-height: 100%;
-        margin-bottom: 120px;
-    }
-
-    .c-stats-1{
-        grid-row: 3;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    
-    }
-    
-    .c-stats-2{
-        grid-row: 3;
-        grid-column: 3;
-        align-self: center;
-        justify-self: center;
-        width: 90%;
-    }
-
-    .c-pokemon{
-        display: flex;
-        grid-row:2;
-        grid-column: 2 / span 2;
-        margin: 0;
-
-    
-    }
-    
-    .c-powerlevel{
-        display: flex;
-        grid-row:4;
-        grid-column: 2 / span 2;
-        align-self: center;
-        flex-direction: column;
-        
-    }
-
-    .c-sprite-pokemon{
-        height: 120px;
-        width: 120px;
-    }
-    
-    .c-pokemon-name{
-        height: 0px;
-        font-size: 16px;
-        font-weight: bold;
-    
-    }
-
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline)*1.5)
-    }
-
-    .progress_bar_color{
-        background-color: white;
-        width: 100%;
-        height: 24px;
-    }
-
-    
-    .bar_radius{
-        border-radius: var(--global-bar-radius);
-        width:100%
-    }
-
-    .progress_bar_percentage_color{
-        background-color: cyan;
-        height:24px;
-    
-    }
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    }
-
-    .c-powerlevel-text{
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 16px;
-    }
-
-    .progress_bar_powerlevel{
-        background-color: white;
-        width: 100%;
-        height: 48px;
-    }
-    
-    .bar_radius_powerlevel{
-        border-radius: 32px;
-        width:100%
-    }
-
-
-    .progress_bar_percentage_color_powerlevel{
-
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,239,255,1) 0%, rgba(0,92,255,1) 100%);
-        height:48px;
-    }
-
-}
-
-
-
+  
 
 
 
