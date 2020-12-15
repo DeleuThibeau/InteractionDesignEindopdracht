@@ -196,8 +196,6 @@ const createPokemonHtml = function(object, powerlevel){
 
 
 
-// #endregion
-
 // #region ==== DOM //
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -210,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("js-button-close").addEventListener("click",function(){
     document.getElementById("myNav").style.width = "0%";
     });
+    // #endregion
 
     // #region ===== Autoscroll  //
     const animateIn = document.querySelectorAll(".js-animate-in-reset");
