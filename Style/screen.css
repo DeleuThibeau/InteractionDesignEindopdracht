@@ -1683,7 +1683,7 @@ input::placeholder{
   
   .c-form-field:focus-within .c-label-floating,
   .c-label-floating.is-floating {
-    transform: translateY(-48px);
+    transform: translateY(-3rem);
   }
   
   
