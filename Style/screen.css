@@ -1117,7 +1117,7 @@ text-align: center;
     .c-nav-button{
         width: calc(var(--global-width-lg-x)*2.5);
         height: calc(var(--global-height-lg-x)*2.5);
-        left: calc(var(--global-baseline-x20)*1.2);  
+        left: calc(var(--global-baseline-x20)*1.5);  
     }
 
     .c-nav-icon{
