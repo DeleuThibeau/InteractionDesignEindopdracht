@@ -1526,7 +1526,7 @@ input::placeholder{
   .o-layout-email-input{
     width:48rem;
     height: 4.5rem;
-    margin-bottom: var(--global-whitespace-xl);
+    margin-bottom: calc(var(--global-whitespace-lg)*1.3);
     border-radius: calc(var(--global-borderRadius-email)*1.2);
     border: var(--global-border);
     padding: var(--global-whitespace-md); 
