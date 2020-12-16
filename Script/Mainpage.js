@@ -20,7 +20,7 @@ const getAllPokemon_API = async (url) => {
     let next = data.next
 
     nextcall = next
-    console.log(resultLijst);
+    //console.log(resultLijst);
     //console.log("filter type in de volgende call is " + filterType)
 
     if(filterType == "showAll")
@@ -93,10 +93,10 @@ const ShowFilterType = (element) => {
         document.getElementById("myNav").style.width = "0%";
         //console.log(`Er werd op ${element} geklikt`)
         filterType = element;
-        console.log(filterType)
+        //console.log(filterType)
         html_PokemonList.innerHTML =""
 
-        nextcall ="https://pokeapi.co/api/v2/pokemon?limit=50"
+        nextcall ="https://pokeapi.co/api/v2/pokemon?limit=250"
         
     })
 };
@@ -194,8 +194,6 @@ const createPokemonHtml = function(object, powerlevel){
 
 
 // #endregion
-
-
 
 // #region ==== DOM //
 document.addEventListener('DOMContentLoaded', function() {

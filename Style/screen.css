@@ -443,7 +443,7 @@ select {
 
 }
 
-/*STATS: BASE STATS POSITION*/
+/*STATS: BASE STATS*/
 
 .c-stats-1{
     grid-row: 3;
@@ -467,7 +467,7 @@ select {
 }
 
 
-/*STATS: POWER LEVEL: POSITION*/
+/*STATS: POWER LEVEL*/
 
 .c-powerlevel{
     display: flex;
@@ -1579,7 +1579,7 @@ input::placeholder{
   .c-landingpage{
       display:grid;
       grid-template-columns: auto 40rem 40rem auto;
-      grid-template-rows:1fr 10rem 16rem 10rem 1fr;
+      grid-template-rows:1fr 10rem 16rem 8rem 1fr;
       row-gap: 3rem;
       column-gap:6rem;
       min-height: 100vh;
@@ -1587,7 +1587,7 @@ input::placeholder{
   
   
   .o-smartphone{
-        height: 45rem;
+        height: 44rem;
         grid-column:3;
         grid-row-start: 2;
         grid-row-end:3;
