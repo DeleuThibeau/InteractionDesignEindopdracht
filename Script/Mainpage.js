@@ -90,6 +90,7 @@ const ShowFilterType = (element) => {
 
     document.getElementById(element).addEventListener("click", async function()
     {
+        document.getElementById("myNav").style.width = "0%";
         //console.log(`Er werd op ${element} geklikt`)
         filterType = element;
         console.log(filterType)

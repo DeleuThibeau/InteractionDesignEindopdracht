@@ -1147,7 +1147,7 @@ text-align: center;
 .c-landingpage{
     display:grid;
     grid-template-columns: auto 16rem auto;
-    grid-template-rows:1fr 4rem 10rem 6rem 25rem 1fr;
+    grid-template-rows:1fr 4rem 10rem 5rem 25rem 1fr;
     row-gap: var(--global-baseline-x40)
 }
 
