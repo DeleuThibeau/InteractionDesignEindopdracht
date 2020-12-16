@@ -1487,7 +1487,7 @@ input::placeholder{
     .c-landingpage{
         display:grid;
         grid-template-columns: auto 48rem auto;
-        grid-template-rows:1fr 9rem 24rem 12rem 64rem 1fr;
+        grid-template-rows:1fr 9rem 24rem 9rem 64rem 1fr;
         row-gap: var(--global-baseline-x120);
     }
 
