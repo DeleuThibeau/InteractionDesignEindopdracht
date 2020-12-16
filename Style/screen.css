@@ -1487,7 +1487,7 @@ input::placeholder{
     .c-landingpage{
         display:grid;
         grid-template-columns: auto 48rem auto;
-        grid-template-rows:1fr 9rem 24rem 10rem 64rem 1fr;
+        grid-template-rows:1fr 9rem 24rem 9rem 64rem 1fr;
         row-gap: var(--global-baseline-x120);
     }
 
@@ -1594,7 +1594,7 @@ input::placeholder{
   .c-landingpage{
       display:grid;
       grid-template-columns: auto 36rem 36rem auto;
-      grid-template-rows:1fr 10rem 16rem 10rem 1fr;
+      grid-template-rows:1fr 10rem 16rem 9rem 1fr;
       row-gap: 3rem;
       column-gap: 1rem;
       min-height: 100vh;
