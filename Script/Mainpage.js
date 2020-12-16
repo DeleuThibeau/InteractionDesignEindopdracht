@@ -110,7 +110,7 @@ const FilterSelector = function()
 
     var typeList = []
 
-    for(i = 0 ; i < 32; i++)
+    for(i = 0 ; i < 34; i++)
     {
         if(i%2 == 1){
             typeList.push(list[i].id)
@@ -134,48 +134,48 @@ const createPokemonHtml = function(object, powerlevel){
             
         <div class="c-stats-1 u-stats-fz">
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>Attack: <b>${object.stats[1].base_stat}</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[1].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[1].base_stat}%/255*100)"></div>
                 </div>
             </div>
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>Defense: <b>${object.stats[2].base_stat }</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[2].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[2].base_stat}%/255*100)"></div>
                 </div>
             </div>
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>HP: <b>${object.stats[0].base_stat }</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[0].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[0].base_stat}%/255*100)"></div>
                 </div>
             </div>
         </div>
 
         <div class="c-stats-2 u-stats-fz">
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>Speciale Attack: <b>${object.stats[3].base_stat }</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[3].base_stat}%/255*100)"></div>
                 </div>
             </div>
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>Speciale Defense: <b>${object.stats[4].base_stat }</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[4].base_stat}%/255*100)"></div>
                 </div>
             </div>
 
-            <div class="c-stat-bar-margin-bottom">
+            <div class="u-stat-bar-margin-bottom">
                 <p>Speed: <b>${object.stats[5].base_stat }</b></p>
-                <div class="progress_bar_color bar_radius">
-                    <div class="progress_bar_percentage_color bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
+                <div class="u-progress_bar_color u-bar_radius">
+                    <div class="u-progress_bar_percentage_color u-bar_radius" style="width:calc(${object.stats[5].base_stat}%/255*100)"></div>
                 </div>
             </div>
         </div>
@@ -183,8 +183,8 @@ const createPokemonHtml = function(object, powerlevel){
 
         <div class="c-powerlevel"> 
             <div class="c-powerlevel-text">Power level: <b>${ powerlevel.toFixed(2) }%</b></div>
-            <div class=" progress_bar_powerlevel bar_radius_powerlevel">
-                <div class="progress_bar_percentage_color_powerlevel bar_radius_powerlevel" style="width:calc(${powerlevel.toFixed(2)}%"></div>
+            <div class=" c-progress_bar_powerlevel u-bar_radius_powerlevel">
+                <div class="progress_bar_percentage_color_powerlevel u-bar_radius_powerlevel" style="width:calc(${powerlevel.toFixed(2)}%"></div>
             </div>
         </div>
     </div>`;

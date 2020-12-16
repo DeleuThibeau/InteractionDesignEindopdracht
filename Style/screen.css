@@ -2,7 +2,23 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face{
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../Fonts/Inter-UI-Regular.woff2") format("woff2")
+}
 
+@font-face{
+    font-family: "Inter Web";
+    font-weight: 500;
+    src: url("../Fonts/Inter-UI-Medium.woff2") format("woff2")
+}
+
+@font-face{
+    font-family: "Inter Web";
+    font-weight: 600;
+    src: url("../Fonts/Inter-UI-Bold.woff2") format("woff2")
+}
 
 /*------------------------------------*\
 #Variables
@@ -327,9 +343,19 @@ select {
 }
 
 
+
+
+
+/*==============================================================================================================================================================================================*/
+
+
+
+
+
 /*#region Mainpage*/
 
 
+/*#Credits to screen.css from labo's*/
 
 .c-input:focus,
 .c-input:active {
@@ -337,13 +363,6 @@ select {
     box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
 }
 
-/*
-    Objects: Layout
-    ---
-    The layout object provides us with a column-style layout system. This object
-    contains the basic structural elements, but classes should be complemented
-    with width utilities
-*/
 
 .o-layout {
     display: -webkit-flex;
@@ -367,11 +386,6 @@ select {
     justify-content: center;
 }
 
-/*
-    Objects: Container
-    ---
-    Creates a horizontal container that sets de global max-width
-*/
 
 .o-container {
     margin-left: auto;
@@ -382,18 +396,11 @@ select {
 }
 
 
-/*
-    Objects: Row
-    ---
-    Creates a horizontal row that stretches the viewport and adds padding around children
-*/
-
 .o-row {
     position: relative;
     padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
-/* size modifiers */
 
 .o-row--lg {
     padding-top: 48px;
@@ -405,7 +412,7 @@ select {
 .c-app-pokemon{
     display: grid;
     grid-template-columns:1fr 6.5rem 6.5rem 1fr ;
-    grid-template-rows: 1fr 9rem 7.5rem 5rem 1fr;
+    grid-template-rows: 1fr 9rem 7.5rem 4rem 1fr;
     column-gap: var(--global-whitespace-md);
     row-gap: var(--global-whitespace-md);
     margin-bottom: var(--global-whitespace-lg);
@@ -448,7 +455,7 @@ select {
 }
 
 .u-stats-fz{
-    font-size: var(--global-fz-sm-x);
+    font-size: calc(var(--global-fz-sm-x)*0.9);
 }
 
 .c-stats-2{
@@ -458,6 +465,7 @@ select {
     justify-self: center;
     width: 100%;
 }
+
 
 /*STATS: POWER LEVEL: POSITION*/
 
@@ -473,34 +481,31 @@ select {
 .c-powerlevel-text{
     align-self: center;
     justify-self: center;
-    margin-bottom: var(--global-whitespace-md);
+    margin-bottom: calc(var(--global-whitespace-sm)*1.2);
     font-size: 0.75rem;
 }
 
-.c-stat-bar-margin-bottom{
-    margin-bottom:var(--global-baseline-x15);
-}
 
 /*STATS: LAYOUT*/
 
-.progress_bar_color{
+.u-progress_bar_color{
     background-color:var(--global-color-neutral-xxxxx-light);
     width: 100%;
-    height: var(--global-height-md);
+    height: calc(var(--global-height-md)*1.2);
 }
 
-.progress_bar_powerlevel{
+.c-progress_bar_powerlevel{
     background-color: var(--global-color-neutral-xxxxx-light);
     width: 100%;
     height: var(--global-height-lg);
 }
 
-.progress_bar_percentage_color{
+.u-progress_bar_percentage_color{
     background-color: var(--global-color-statbar);
-    height:var(--global-height-md);
+    height:calc(var(--global-height-md)*1.2);
 }
 
-.bar_radius{
+.u-bar_radius{
     border-radius: var(--global-bar-radius);
     width:100%
 }
@@ -512,9 +517,13 @@ select {
 
 }
 
-.bar_radius_powerlevel{
+.u-bar_radius_powerlevel{
     border-radius: var(--global-bar-radius-md);
     width:100%
+}
+
+.u-stat-bar-margin-bottom{
+    margin-bottom:var(--global-baseline-x10);
 }
 
 /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
@@ -539,7 +548,7 @@ select {
 
 /*TITLE AND MOTTO*/
 .c-title-app{
-    font-size: var(--global-fz-md-x);
+    font-size: calc(var(--global-fz-md)*1.2);
     font-weight: Bold;
 }
 
@@ -693,7 +702,9 @@ text-align: center;
       opacity: 0;
   }
 
-
+  .u-stat-bar-margin-bottom p{
+        margin-bottom: 0.25rem;
+  }
 
 
 /*==================================== MEDIAQUERIES ====================================*/
@@ -737,10 +748,6 @@ text-align: center;
     }
     
     
-    .c-nav-icon{
-        height:var(--global-baseline-x40);
-        width:var(--global-baseline-x40);
-    }
     
     /*TITLE AND MOTTO*/
     .c-title-app{
@@ -789,8 +796,8 @@ text-align: center;
     
     
     .c-sprite-pokemon{
-        height: calc(var(--global-baseline-x100)*1.5);
-        width: calc(var(--global-baseline-x100)*1.5);
+        height: calc(var(--global-baseline-x100)*1.75);
+        width: calc(var(--global-baseline-x100)*1.75);
     }
     
     .c-pokemon-name{
@@ -803,15 +810,15 @@ text-align: center;
     
     /*STATS: LAYOUT*/
 
-    .progress_bar_color{
+    .u-progress_bar_color{
         height: var(--global-height-lg);
     }
 
-    .progress_bar_powerlevel{
+    .c-progress_bar_powerlevel{
         height: var(--global-height-lg-xx);
     }
 
-    .progress_bar_percentage_color{
+    .u-progress_bar_percentage_color{
         height:var(--global-height-lg);
 
     }
@@ -825,6 +832,10 @@ text-align: center;
         font-size: calc(var(--global-fz-md)*1.2);
     }
 
+    .u-stat-bar-margin-bottom{
+        margin-bottom:var(--global-baseline-x15);
+    }
+
     
     
     /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
@@ -832,7 +843,7 @@ text-align: center;
     /*POSITION NAVIGATION: FIXED*/
     .c-nav-button{
         width: calc(var(--global-width-sm)*7);
-        height: calc(var(--global-hight-sm)*7);
+        height: calc(var(--global-height-sm)*7);
 
     }
     
@@ -898,7 +909,7 @@ text-align: center;
     
     .c-app-pokemon{
         display: grid;
-        grid-template-columns:1fr 10rem 18rem 18rem 1fr ;
+        grid-template-columns:1fr 10rem 16rem 16rem 1fr ;
         grid-template-rows: 1fr 18rem 9rem 1fr;
         margin-bottom: 7.5rem;
         column-gap: var(--global-baseline-x40);
@@ -941,6 +952,7 @@ text-align: center;
         grid-row: 2;
         grid-column: 4;
     }
+
     
     /*STATS: POWER LEVEL: POSITION*/
     
@@ -953,21 +965,21 @@ text-align: center;
         font-size: calc(var(--global-fz-md)*1.5);
     }
     
-    .c-stat-bar-margin-bottom{
+    .u-stat-bar-margin-bottom{
         margin-bottom:calc(var(--global-baseline-x10)*1.5);
     }
     
     /*STATS: LAYOUT*/
     
-    .progress_bar_color{
+    .u-progress_bar_color{
         height: calc(var(--global-height-lg)*1.5);
     }
 
-    .progress_bar_percentage_color{
+    .u-progress_bar_percentage_color{
         height:calc(var(--global-height-lg)*1.5);
     }
     
-    .progress_bar_powerlevel{
+    .c-progress_bar_powerlevel{
         height: calc(var(--global-height-lg-xx)*1.5);
     }
 
@@ -981,16 +993,11 @@ text-align: center;
     
     /*POSITION NAVIGATION: FIXED*/
     .c-nav-button{
-        width: calc(var(--global-width-lg-x)*3);
-        height: calc(var(--global-height-lg-x)*3);
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
         left: var(--global-baseline-x20);  
     }
     
-    
-    .c-nav-icon{
-        height:calc(var(--global-height-lg-x)*3);
-        width:calc(var(--global-width-lg-x)*3);
-    }
 
     
     /*TITLE AND MOTTO*/
@@ -1012,8 +1019,8 @@ text-align: center;
       
     
       .c-type{
-          font-size: calc(var(--global-fz-sm)*2);
-      }
+        font-size: calc(var(--global-fz-sm)*1.75);
+        }
 
       .overlay .closebtn {
         position: absolute;
@@ -1033,6 +1040,11 @@ text-align: center;
         height: calc(var(--global-height-lg-x)*2);
       }
 
+      .u-bar_radius_powerlevel{
+        border-radius: calc(var(--global-bar-radius-md)*2);
+        width:100%
+    }
+
     
 
 }
@@ -1042,7 +1054,7 @@ text-align: center;
     
     .c-app-pokemon{
         display: grid;
-        grid-template-columns:1fr 15rem 22.5rem 22.5rem 1fr ;
+        grid-template-columns:1fr 15rem 20rem 20rem 1fr ;
         grid-template-rows: 1fr 18rem 8rem 1fr;
         column-gap: var(--global-baseline-x40);
         row-gap: var(--global-baseline-x40);
@@ -1053,60 +1065,71 @@ text-align: center;
 
     
     .c-sprite-pokemon{
-        height: calc(var(--global-height-lg-xx)*4);
-        width: calc(var(--global-width-lg-xx)*4);
+        height: calc(var(--global-height-lg-xx)*5);
+        width: calc(var(--global-width-lg-xx)*5);
     }
     
     .c-pokemon-name{
-        font-size: calc(var(--global-fz-md)*1.5)
+        font-size: calc(var(--global-fz-md)*1.25)
     }
     
     /*STATS: BASE STATS POSITION*/
     
     
     .u-stats-fz{
-        font-size: calc(var(--global-fz-md)*1.5)
+        font-size: calc(var(--global-fz-md)*1.25)
+    }
+
+    .u-stat-bar-margin-bottom{
+        margin-bottom:var(--global-baseline-x20);
     }
     
     
-    /*STATS: POWER LEVEL: POSITION*/
+    /*STATS: POWER LEVEL*/
     
     
     .c-powerlevel-text{
 
         margin-bottom: var(--global-baseline-x20);
-        font-size: calc(var(--global-fz-md)*2)
+        font-size: calc(var(--global-fz-md)*1.5)
     }
-    
-    .c-stat-bar-margin-bottom{
-        margin-bottom:calc(var(--global-baseline-x10)*1.5)
-    }
-    
-    /*STATS: LAYOUT*/
-    
-
     
 
     /*============================ NAVIGATION: SVG EN FILTER LIJST ==========================*/
     
-    /*POSITION NAVIGATION: FIXED*/
+
     .c-nav-button{
-        left:var(--global-baseline-x20) 
+        width: calc(var(--global-width-lg-x)*3);
+        height: calc(var(--global-height-lg-x)*3);
+        left: calc(var(--global-baseline-x20)*1.5);  
     }
-    
+
+    .c-nav-icon{
+        height:calc(var(--global-height-lg-x)*2.5);
+        width:calc(var(--global-width-lg-x)*2.5);
+    }
+
 
     
-    /*TITLE AND MOTTO*/
-    .c-title-app{
-        font-size: calc(var(--global-fz-md)*4)
-    }
-    
-    .c-motto-app{
-        font-size: calc(var(--global-fz-md)*3)
-    }
     
     .overlay .closebtn {
         top:var(--global-baseline-x10);
+        width: calc(var(--global-width-lg-x)*2);
+        height: calc(var(--global-height-lg-x)*2);
+      }
+
+
+      .o-container{
+          margin-bottom: var(--global-baseline-x120);
+      }
+
+      .c-type{
+        font-size: calc(var(--global-fz-sm)*1.75);
+    }
+
+    .overlay-content {
+        top: var(--global-baseline-x100);
+
       }
       
 
@@ -1634,6 +1657,10 @@ input::placeholder{
 
   
   /*================================== BODY: EMAIL INPUT===============================*/
+  .c-input{
+    font-size: var(--global-fz-md);
+    width: 48rem;
+}
     
   .c-label-email{
       font-size: var(--global-fz-md);
@@ -1671,6 +1698,7 @@ input::placeholder{
       padding:calc(var(--global-whitespace-sm)*1.5) var(--global-whitespace-lg);
       border-radius: 3rem;
   }
+
   
  
 }
