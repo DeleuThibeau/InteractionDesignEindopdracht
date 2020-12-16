@@ -541,6 +541,7 @@ select {
 }
 
 
+
 .c-nav-icon{
     height:var(--global-height-lg);
     width:var(--global-width-lg);
@@ -759,7 +760,7 @@ text-align: center;
     }
     
     .c-motto-app{
-    font-size: var(--global-fz-md)
+    font-size: calc(var(--global-fz-md)*0.9)
     }
 
     .overlay-content {
