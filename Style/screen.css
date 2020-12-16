@@ -632,6 +632,10 @@ text-align: center;
     background-color: var(--global-color-type-steel);
 }
 
+.overlay .o-dragon:hover{
+    background-color: var(--global-color-alpha);
+}
+
 .overlay .o-ice:hover{
     background-color: var(--global-color-type-ice);
     color:var(--global-color-neutral-xxxxx-dark);
